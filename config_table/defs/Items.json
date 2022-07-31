@@ -1,0 +1,22 @@
+[
+    {
+        "name": "ID",
+        "id":"id",
+        "type":"Real"
+    },
+    {
+        "name":"Name",
+        "id":"name",
+        "type":"String"
+    },
+    {
+        "name":"Weight",
+        "id":"weight",
+        "type":"Real"
+    },
+    {
+        "name":"Price",
+        "id":"price",
+        "type":"Real"
+    }
+]

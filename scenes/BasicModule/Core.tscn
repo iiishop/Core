@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/BasicModule/RotationTurretBasic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://asset/Maps/Core.png" type="Texture" id=2]
+[ext_resource path="res://scripts/ModuleManager.gd" type="Script" id=3]
+[ext_resource path="res://scenes/BasicModule/EngineBasic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/InputManager.gd" type="Script" id=5]
+[ext_resource path="res://scenes/BasicModule/BulletBasic.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/BasicModule/RotorBasic.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/AssistScripts/SPDArrows.gd" type="Script" id=8]
+[ext_resource path="res://asset/Arrows.png" type="Texture" id=9]
+[ext_resource path="res://scripts/AssistScripts/ForArrows.gd" type="Script" id=10]
+[ext_resource path="res://scenes/BasicModule/GeneratorBasic.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scripts/CoreManager.gd" type="Script" id=12]
+[ext_resource path="res://scenes/BasicModule/Store.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/AssistScripts/MousePoint.gd" type="Script" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="Core" type="RigidBody2D"]
+position = Vector2( 523, 325 )
+mass = 0.00102041
+gravity_scale = 0.0
+can_sleep = false
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 5 )
+
+[node name="CoreManager" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="ForArrows" type="Sprite" parent="."]
+self_modulate = Color( 1, 0, 0, 1 )
+z_index = 1
+texture = ExtResource( 9 )
+offset = Vector2( 0, -50 )
+script = ExtResource( 10 )
+
+[node name="SPDArrows" type="Sprite" parent="."]
+z_index = 1
+texture = ExtResource( 9 )
+offset = Vector2( 0, -100 )
+script = ExtResource( 8 )
+
+[node name="ModuleManager" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Engine" parent="ModuleManager" instance=ExtResource( 4 )]
+position = Vector2( 0, 8 )
+rotation = 1.5708
+MaxHP = 1000
+Mass = 250
+Max_Power = 50
+Length = 0
+Thrust = 50000
+Working_Power_Consumption = 200
+
+[node name="Engine2" parent="ModuleManager" instance=ExtResource( 4 )]
+position = Vector2( 8, 0 )
+MaxHP = 1000
+Mass = 250
+Max_Power = 50
+Length = 0
+Thrust = 50000
+Working_Power_Consumption = 200
+Face = 2
+
+[node name="Engine3" parent="ModuleManager" instance=ExtResource( 4 )]
+position = Vector2( -8, 0 )
+rotation = 3.14159
+MaxHP = 1000
+Mass = 250
+Max_Power = 50
+Length = 0
+Thrust = 50000
+Working_Power_Consumption = 200
+Face = 3
+
+[node name="Engine4" parent="ModuleManager" groups=["Down", "Engine"] instance=ExtResource( 4 )]
+position = Vector2( 0, -8 )
+rotation = -1.5708
+MaxHP = 1000
+Mass = 250
+Max_Power = 50
+Length = 0
+Thrust = 50000
+Working_Power_Consumption = 200
+Face = 1
+
+[node name="Rotor" parent="ModuleManager" instance=ExtResource( 7 )]
+MaxHP = 1000
+Max_Power = 50
+Length = 0
+Moment = 100000
+
+[node name="RotationTurret" parent="ModuleManager" instance=ExtResource( 1 )]
+Max_Power = 500
+Length = 0
+Bullet_Scene = ExtResource( 6 )
+CD = 0.5
+
+[node name="Muzzle" parent="ModuleManager/RotationTurret/TurretBody" index="0"]
+position = Vector2( 1.99999, 0 )
+
+[node name="Generator" parent="ModuleManager" instance=ExtResource( 11 )]
+Length = 0
+Power = 500.0
+
+[node name="MousePoint" type="Node2D" parent="ModuleManager"]
+script = ExtResource( 14 )
+Length = 0
+Width = 0
+Type = 0
+
+[node name="Store" parent="ModuleManager" instance=ExtResource( 13 )]
+Max_Weight = 1000.0
+
+[node name="CoreSprit" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[editable path="ModuleManager/Engine"]
+[editable path="ModuleManager/Engine2"]
+[editable path="ModuleManager/Engine3"]
+[editable path="ModuleManager/Engine4"]
+[editable path="ModuleManager/RotationTurret"]

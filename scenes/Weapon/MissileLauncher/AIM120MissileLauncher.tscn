@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://asset/Missile1.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Items/Missile/Missile1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/BasicModule/MissileLauncherBasic.tscn" type="PackedScene" id=3]
+
+[node name="MissileLauncher" instance=ExtResource( 3 )]
+ID = 3
+MaxHP = 500
+Mass = 1000
+Max_Power = 10
+Can_Build_Up = true
+Can_Build_Down = true
+Can_Build_Left = true
+Can_Build_Right = true
+Missile = ExtResource( 2 )
+CD = 1.0
+
+[node name="MissilePlatform" parent="." index="1"]
+rotation = 0.0
+
+[node name="Sprite" parent="MissilePlatform" index="0"]
+rotation = 1.5708
+
+[node name="MissileLoader" parent="MissilePlatform" index="1"]
+position = Vector2( 0, 5 )
+
+[node name="Sprite" parent="MissilePlatform/MissileLoader" index="0"]
+position = Vector2( 0, -5.00001 )
+rotation = 1.5708
+offset = Vector2( 4, 0 )
+
+[node name="MissileLoad" parent="MissilePlatform" index="3"]
+rotation = 1.5708
+texture = ExtResource( 1 )

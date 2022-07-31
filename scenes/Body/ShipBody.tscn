@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/BasicModule/BodyBasic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://asset/Maps/ShipBody.png" type="Texture" id=2]
+
+[node name="Body" instance=ExtResource( 1 )]
+ID = 2
+MaxHP = 500
+Mass = 100
+Can_Build_Up = true
+Can_Build_Down = true
+Can_Build_Left = true
+Can_Build_Right = true
+Type = 0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+hframes = 4

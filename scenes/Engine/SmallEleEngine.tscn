@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/BasicModule/EngineBasic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://asset/SmallEleEngine.png" type="Texture" id=2]
+
+[node name="Engine" instance=ExtResource( 1 )]
+ID = 4
+MaxHP = 500
+Mass = 20
+Max_Power = 10
+Can_Build_Up = true
+Thrust = 80000
+Working_Power_Consumption = 30
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+rotation = 3.14159
+texture = ExtResource( 2 )
+hframes = 2

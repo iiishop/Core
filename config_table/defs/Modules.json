@@ -1,0 +1,27 @@
+[
+    {
+        "name":"ID",
+        "id":"id",
+        "type":"Real"
+    },
+    {
+        "name":"模块名称",
+        "id":"name",
+        "type":"String"
+    },
+    {
+        "name":"场景路径",
+        "id":"path",
+        "type":"String"
+    },
+    {
+        "name":"模块描述",
+        "id":"description",
+        "type":"String"
+    },
+    {
+        "name":"模块类型",
+        "id":"type",
+        "type":"Real"
+    }
+]
