@@ -57,10 +57,16 @@ class Galaxy:
 			Store[i]=0
 		for i in range(4):
 			Resources[i]=rd.randi_range(10,500)
+
+
+
+
+
+
+
 	func Mining():
 		for i in range(4):
 			Store[i+1]+=Resources[i]
-	
 
 
 

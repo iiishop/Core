@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/ShipAI.gd" type="Script" id=1]
+[ext_resource path="res://asset/frigate_2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/BasicModule/ImmobileMissileLauncherBasic.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Items/Missile/Missile1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/ShipManager.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 400.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2( 324, 193 )
+gravity_scale = 0.0
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Manager" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="ImmobileMissileLauncher" parent="Manager" instance=ExtResource( 3 )]
+Missile = ExtResource( 4 )
+
+[node name="MissileLoader" parent="Manager/ImmobileMissileLauncher/MissilePlatform" index="0"]
+position = Vector2( 9, -1 )
+
+[node name="MissilePosition" parent="Manager/ImmobileMissileLauncher/MissilePlatform" index="1"]
+position = Vector2( 9, 3 )
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource( 2 )
+
+[editable path="Manager/ImmobileMissileLauncher"]

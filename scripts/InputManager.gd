@@ -72,7 +72,7 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("Shoot1") and !WorldVar.Is_In_Creating_Mode:
 		for i in get_node("ModuleManager").get_children():
-			if (i.is_in_group("RotationTurret") or i.is_in_group("Turret") or i.is_in_group("MissileLauncher")) and i.Is_Working:
+			if (i.is_in_group("RotationTurret") or i.is_in_group("Turret") or i.is_in_group("MissileLauncher") or i.is_in_group("ImmobileMissileLauncher")) and i.Is_Working:
 				if i.CDNow<=0 and i.Is_Ready:
 					i.CDNow=i.CD/get_node("ModuleManager").PowerPercent
 					i.Shoot()
