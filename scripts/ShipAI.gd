@@ -5,7 +5,7 @@ func _ready():
 	pass 
 
 
-enum {
+enum Behavior{
 	Attack,
 	Idle
 }
