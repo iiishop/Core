@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/ShipAI.gd" type="Script" id=1]
 [ext_resource path="res://asset/frigate_2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/BasicModule/ImmobileMissileLauncherBasic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Items/Missile/Missile1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/ShipManager.gd" type="Script" id=5]
+[ext_resource path="res://scenes/BasicModule/Store.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/ShipModuleManager.gd" type="Script" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.0
@@ -13,8 +14,7 @@ height = 24.0
 [sub_resource type="CircleShape2D" id=2]
 radius = 400.0
 
-[node name="RigidBody2D" type="RigidBody2D"]
-position = Vector2( 324, 193 )
+[node name="Ship" type="RigidBody2D"]
 gravity_scale = 0.0
 linear_damp = 0.0
 angular_damp = 0.0
@@ -27,21 +27,31 @@ texture = ExtResource( 2 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="Manager" type="Node2D" parent="."]
-script = ExtResource( 5 )
+[node name="ModuleManager" type="Node2D" parent="."]
+script = ExtResource( 6 )
 
-[node name="ImmobileMissileLauncher" parent="Manager" instance=ExtResource( 3 )]
+[node name="ImmobileMissileLauncher" parent="ModuleManager" instance=ExtResource( 3 )]
 Missile = ExtResource( 4 )
+CD = 0.5
+Firing_Range = 300.0
 
-[node name="MissileLoader" parent="Manager/ImmobileMissileLauncher/MissilePlatform" index="0"]
+[node name="MissileLoader" parent="ModuleManager/ImmobileMissileLauncher/MissilePlatform" index="0"]
 position = Vector2( 9, -1 )
 
-[node name="MissilePosition" parent="Manager/ImmobileMissileLauncher/MissilePlatform" index="1"]
+[node name="MissilePosition" parent="ModuleManager/ImmobileMissileLauncher/MissilePlatform" index="1"]
 position = Vector2( 9, 3 )
+
+[node name="Muzzle" parent="ModuleManager/ImmobileMissileLauncher" index="1"]
+position = Vector2( 12, 3 )
+
+[node name="Store" parent="ModuleManager" instance=ExtResource( 5 )]
+Max_Weight = 500.0
 
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource( 2 )
 
-[editable path="Manager/ImmobileMissileLauncher"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
+
+[editable path="ModuleManager/ImmobileMissileLauncher"]

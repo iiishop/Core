@@ -13,7 +13,7 @@ func _ready():
 	for i in CampMap:
 		for j in range(CampMap.size()):
 			i.FavorabilityMap.append(0)
-		print(i.Name)
+
 
 
 
@@ -23,9 +23,10 @@ class Camp:
 	
 	var ID
 	var Name=""
-	var FavorabilityMap=[]
-	var Friend=[]
-	var Hostile=[]
+	var FavorabilityMap=[]					#与其他阵营的好感度
+	var Friend=[]							#友好阵营
+	var Hostile=[]							#敌对阵营
+	var Galaxy=[]							#拥有的星系
 	func _init():
 		for i in range(5):
 			rd.randomize()

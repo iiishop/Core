@@ -14,3 +14,5 @@ script = ExtResource( 1 )
 [node name="MissileLoad" type="Sprite" parent="MissilePlatform"]
 rotation = 1.5708
 z_index = -1
+
+[node name="Muzzle" type="Node2D" parent="."]
