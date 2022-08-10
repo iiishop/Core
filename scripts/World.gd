@@ -4,7 +4,7 @@ extends Node2D
 func _ready():
 	SignalBus.connect("Shoot",self,"_on_Shoot")
 	SignalBus.connect("MissileShoot",self,"_on_MissileShoot")
-	get_tree().debug_collisions_hint=true
+	#get_tree().debug_collisions_hint=true
 	
 func _on_Shoot(Bullet,Position,Rotation,i):
 
@@ -14,6 +14,8 @@ func _on_Shoot(Bullet,Position,Rotation,i):
 	Bullet.position=Position
 	Bullet.rotate(Rotation)
 	Bullet.set_axis_velocity((get_global_mouse_position()-Position).normalized()*Bullet.Speed+V)
+	Bullet.Camp=i.Camp
+	Bullet.GalaxyNow=i.GalaxyNow
 	#为Core添加储存功能，储存器以质量来限定上限
 	#添加储存器模块
 	#发射物体后自上而下从拥有储存功能的模块减少相应质量
@@ -31,4 +33,6 @@ func _on_MissileShoot(Missile,Position,Rotation,i):
 	Missile.position=Position
 	Missile.rotate(Rotation)
 	Missile.linear_velocity=i.linear_velocity+10*Vector2.RIGHT.rotated(Rotation)
+	Missile.Camp=i.Camp
+	Missile.GalaxyNow=i.GalaxyNow
 	Missile.Shoot()

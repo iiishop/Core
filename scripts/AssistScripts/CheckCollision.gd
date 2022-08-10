@@ -1,7 +1,7 @@
 extends CollisionShape2D
 
 export var LinkCollision:NodePath
-#此辅助模块置于船只一级目录下，父节点为Rigidbody2d类型的船只根结点
+#此辅助模块供给于子弹和导弹等需要物理碰撞效果的碰撞器使用，置于rigidbody2d一级子菜单
 var Target=null
 
 

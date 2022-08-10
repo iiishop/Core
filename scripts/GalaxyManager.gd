@@ -41,14 +41,15 @@ class Galaxy:
 	var ID					#唯一指定ID
 	var Pos:Vector2			#星系在星图中的位置
 	var Population			#星系的总人口
-	var Resources=[]		#水金铁硅   指的是星系中的各类资源行星数量
+	var Resources=[]			#水金铁硅   指的是星系中的各类资源行星数量
 	var Shop=[]				#星系商店中售卖的物品
-#	var Patrol_Ship=[]
-#	var War_Ship=[]
-#	var Cargo_Ship=[]
+	var Patrol_Ship=[]
+	var War_Ship=[]
+	var Cargo_Ship=[]
 	var Buildings=[]
 	var Task=[]				#星系发布的任务
-	var Store=[]			#全星系的仓库
+	var Store=[]				#全星系的仓库
+	var FavorabilityMap=[]	#此星系对阵营的好感度
 	
 	func _init():
 		rd.randomize()
@@ -58,13 +59,7 @@ class Galaxy:
 			Store[i]=0
 		for i in range(4):
 			Resources[i]=rd.randi_range(10,500)
-
-
-
-
-
-
-
+	
 	func Mining():
 		for i in range(4):
 			Store[i+1]+=Resources[i]

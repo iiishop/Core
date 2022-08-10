@@ -13,8 +13,14 @@ func _ready():
 	for i in CampMap:
 		for j in range(CampMap.size()):
 			i.FavorabilityMap.append(0)
+		for j in get_parent().get_node("GalaxyManager").GalaxyMap:
+			j.FavorabilityMap.append(0)
 
+func CampAdd(GalaxyID):						#创建一个新的阵营，提供阵营首都的星系ID
+	pass
 
+func CampRemove(ID):							#删除一个阵营，提供阵营ID
+	pass
 
 
 class Camp:

@@ -80,6 +80,9 @@ rect_pivot_offset = Vector2( 64, 0 )
 text = "Press E to enter"
 align = 1
 
+[node name="CampManager" type="Node2D" parent="."]
+script = ExtResource( 15 )
+
 [node name="EscMenu" parent="." instance=ExtResource( 8 )]
 pause_mode = 2
 player_node_path = NodePath("../Core")
@@ -100,14 +103,16 @@ can_sleep = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipManager/RigidBody2D"]
 shape = SubResource( 1 )
+disabled = true
 
 [node name="Icon" type="Sprite" parent="ShipManager/RigidBody2D"]
 texture = ExtResource( 1 )
 
 [node name="Ship" parent="ShipManager" instance=ExtResource( 17 )]
-MaxSpeed = 30.0
+MaxRotSpeed = 30.0
 Force = 30.0
 Moment = 30.0
+Distance = 150.0
 
 [node name="GUI" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -182,9 +187,6 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -129.0
 margin_bottom = 18.0
-
-[node name="CampManager" type="Node2D" parent="."]
-script = ExtResource( 15 )
 
 [connection signal="button_up" from="CanvasLayer/Control/Button" to="Core" method="_on_Button_button_up"]
 [connection signal="body_entered" from="GalaxyManager/SpacePort/Area2D" to="GalaxyManager/SpacePort" method="_on_Area2D_body_entered"]

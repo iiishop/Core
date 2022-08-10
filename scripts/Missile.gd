@@ -8,6 +8,8 @@ export var Hurt=0.0
 export(PackedScene) var Explode
 var Enemy=null
 var is_dead=false
+var Camp
+var GalaxyNow
 
 
 
