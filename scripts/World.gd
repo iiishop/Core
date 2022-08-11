@@ -4,7 +4,7 @@ extends Node2D
 func _ready():
 	SignalBus.connect("Shoot",self,"_on_Shoot")
 	SignalBus.connect("MissileShoot",self,"_on_MissileShoot")
-	#get_tree().debug_collisions_hint=true
+	get_tree().debug_collisions_hint=true
 	
 func _on_Shoot(Bullet,Position,Rotation,i):
 

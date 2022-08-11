@@ -23,7 +23,7 @@ contacts_reported = 1
 contact_monitor = true
 ID = 5
 Force = 500.0
-Moment = 200.0
+RotSpeed = 1.0
 CD = 10.0
 Explode = ExtResource( 3 )
 

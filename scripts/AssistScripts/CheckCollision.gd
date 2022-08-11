@@ -25,5 +25,5 @@ func _on_CheckArea_body_entered(body):
 func _on_CheckArea_body_exited(body):
 	if body==Target:
 		Target=null
-		if get_node(LinkCollision)!=null:
+		if has_node(LinkCollision):
 			get_node(LinkCollision).set_deferred("disabled",true)

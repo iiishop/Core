@@ -15,6 +15,7 @@ height = 24.0
 radius = 400.0
 
 [node name="Ship" type="RigidBody2D"]
+collision_mask = 2
 gravity_scale = 0.0
 linear_damp = 0.0
 angular_damp = 0.0
@@ -48,6 +49,7 @@ position = Vector2( 12, 3 )
 Max_Weight = 500.0
 
 [node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource( 2 )

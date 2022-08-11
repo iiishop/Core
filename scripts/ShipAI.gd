@@ -58,7 +58,7 @@ func Patral():
 func Move(Pos:Vector2):			#向Pos运动，Pos必须为global_position
 	linear_damp=0
 	var angleT=(Vector2(1,0).rotated(rotation)).angle_to(Pos-global_position)
-	linear_velocity=Vector2(linear_velocity.length(),0).rotated(rotation)
+#	linear_velocity=Vector2(linear_velocity.length(),0).rotated(rotation)
 	if angleT>0.1:
 		if abs(angular_velocity)<=MaxRotSpeed:
 			applied_torque=Moment
@@ -89,8 +89,13 @@ func Move(Pos:Vector2):			#向Pos运动，Pos必须为global_position
 
 
 func _on_AttackArea_body_entered(body):
-	if target==null and body!=self:
-		target=body
+	if target==null and body!=self and body.Camp!=Camp:
+		if Camp==-1:
+			if get_node("/root/World/GalaxyManager").GalaxyMap[GalaxyNow].FavorabilityMap[body.Camp]<0:
+				target=body
+		else:
+			if get_node("/root/World/CampManager").CampMap[Camp].FavorabilityMap[body.Camp]<0:
+				target=body
 
 
 func _on_AttackArea_body_exited(body):
