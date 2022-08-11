@@ -11,10 +11,18 @@ func _ready():
 	CampMap[0].Name="玩家"
 	CampMap[1].Name="海盗"
 	for i in CampMap:
-		for j in range(CampMap.size()):
-			i.FavorabilityMap.append(0)
-		for j in get_parent().get_node("GalaxyManager").GalaxyMap:
-			j.FavorabilityMap.append(0)
+		if i.Name!="海盗":
+			for j in range(7):
+				i.FavorabilityMap.append(0)
+			i.FavorabilityMap[1]=-10
+			for j in get_parent().get_node("GalaxyManager").GalaxyMap:
+				j.FavorabilityMap.append(0)
+		else:
+			for j in range(7):
+				i.FavorabilityMap.append(-10)
+			i.FavorabilityMap[1]=0
+			for j in get_parent().get_node("GalaxyManager").GalaxyMap:
+				j.FavorabilityMap.append(-10)
 
 func CampAdd(GalaxyID):						#创建一个新的阵营，提供阵营首都的星系ID
 	pass

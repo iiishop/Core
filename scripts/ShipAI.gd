@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 var target=null
-var Camp=-1			#飞船所属的阵营 -1为无
+export var Camp=-1			#飞船所属的阵营 -1为无
 var GalaxyNow=0		#飞船当前所载的星系的ID，和玩家相同时飞船可见
 					#当飞船无阵营时，飞船不会进行跃迁操作，好感度列表为当前所处阵营的
 
