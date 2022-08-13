@@ -5,7 +5,7 @@
 [ext_resource path="res://scripts/World.gd" type="Script" id=3]
 [ext_resource path="res://scripts/AssistScripts/Camera2D.gd" type="Script" id=4]
 [ext_resource path="res://scenes/ShipCreateMenu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://asset/StartGalaxy.png" type="Texture" id=6]
+[ext_resource path="res://asset/2.png" type="Texture" id=6]
 [ext_resource path="res://scripts/AssistScripts/BackGroundManager.gd" type="Script" id=7]
 [ext_resource path="res://scenes/EscMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/GalaxyManager.gd" type="Script" id=9]
@@ -43,7 +43,6 @@ script = ExtResource( 7 )
 
 [node name="BackGroundNow" type="Sprite" parent="BackGroundManager"]
 pause_mode = 2
-scale = Vector2( 10, 10 )
 texture = ExtResource( 6 )
 
 [node name="Core" parent="." instance=ExtResource( 2 )]
