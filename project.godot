@@ -42,6 +42,10 @@ root_directory="res://config_table"
 config_table_template_path="templates/ConfigTable.gd.template"
 config_helper_save_path="ConfigHelper.gd"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/config_table_plugin/plugin.cfg" )
