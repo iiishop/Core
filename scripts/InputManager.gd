@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var Camp=0								#所属阵营
+var GalaxyNow=0
 
 var IsBraking=false
 var IsRotateU=false

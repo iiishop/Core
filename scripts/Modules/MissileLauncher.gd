@@ -2,6 +2,7 @@ extends "res://scripts/BasicModule.gd"
 
 export(PackedScene) var Missile
 export var CD=0.0
+export var Firing_Range=0.0
 var CDNow=0.0
 var ML
 var T
@@ -13,12 +14,6 @@ func _ready():
 	ML.position=get_node("MissilePlatform/MissilePosition").position
 	T=get_node("MissilePlatform/MissileLoader").position-get_node("MissilePlatform/MissilePosition").position
 	T=T/CD
-	if get_parent().name!="MousePoint":
-		if get_parent().Store[Missile.instance().ID]!=null and get_parent().Store[Missile.instance().ID]>0 and !Is_Ready:
-			Is_Ready=true
-		elif get_parent().Store[Missile.instance().ID]==null or get_parent().Store[Missile.instance().ID]<=0 and Is_Ready:
-			ML.position=get_node("MissilePlatform/MissileLoader").position
-			Is_Ready=false
 
 func _physics_process(delta):
 	if CDNow>0 and get_parent().Store[Missile.instance().ID]!=null and get_parent().Store[Missile.instance().ID]>0:
@@ -45,6 +40,6 @@ func Shoot():
 					get_parent().StoreManage()
 					break
 		T=(get_node("MissilePlatform/MissileLoader").position-get_node("MissilePlatform/MissilePosition").position)/CDNow
-		SignalBus.emit_signal("MissileShoot",Missile.instance(),get_node("MissilePlatform/MissilePosition").global_position)
+		SignalBus.emit_signal("MissileShoot",Missile.instance(),get_node("MissilePlatform/MissilePosition").global_position,get_node("MissilePlatform").rotation+get_parent().get_parent().rotation,get_parent().get_parent())
 		ML.position=get_node("MissilePlatform/MissileLoader").position	
 	

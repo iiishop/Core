@@ -32,9 +32,9 @@ config/icon="res://asset/icon.png"
 
 [autoload]
 
-ConfigHelper="*res://config_table//ConfigHelper.gd"
 WorldVar="*res://scripts/AssistScripts/WorldVar.gd"
 SignalBus="*res://scripts/AssistScripts/SignalBus.gd"
+ConfigHelper="*res://config_table//ConfigHelper.gd"
 
 [config_table_plugin]
 
@@ -125,10 +125,8 @@ Rotate_Module={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
-2d_physics/layer_2="Enemy"
-2d_physics/layer_3="PlayerBullet"
-2d_physics/layer_4="EnemyBullet"
+2d_physics/layer_1="Ship"
+2d_physics/layer_2="Bullet"
 
 [physics]
 

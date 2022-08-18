@@ -2,10 +2,11 @@ extends "res://scripts/BasicModule.gd"
 
 export(PackedScene) var Missile
 export var CD=0.0
+export var Firing_Range=0.0
 var CDNow=0.0
 var ML
 var T
-var Is_Ready=false
+var Is_Ready=true
 
 func _ready():
 	add_to_group("ImmobileMissileLauncher")
@@ -40,6 +41,6 @@ func Shoot():
 					get_parent().StoreManage()
 					break
 		T=(get_node("MissilePlatform/MissileLoader").position-get_node("MissilePlatform/MissilePosition").position)/CDNow
-		SignalBus.emit_signal("MissileShoot",Missile.instance(),get_node("MissilePlatform/MissilePosition").global_position)
+		SignalBus.emit_signal("MissileShoot",Missile.instance(),get_node("MissilePlatform/MissilePosition").global_position,get_parent().get_parent().rotation,get_parent().get_parent())
 		ML.position=get_node("MissilePlatform/MissileLoader").position	
 	

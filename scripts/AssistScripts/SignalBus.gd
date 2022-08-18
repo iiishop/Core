@@ -1,4 +1,4 @@
 extends Node
 
-signal Shoot(Bullet,Position)
-signal MissileShoot(Missile,Position)
+signal Shoot(Bullet,Position,Rotation,i)
+signal MissileShoot(Missile,Position,Rotation,i)

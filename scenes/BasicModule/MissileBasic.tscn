@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Missile.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Another/CheckCollision.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 resource_local_to_scene = true
@@ -19,8 +20,8 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
 [node name="Missile" type="RigidBody2D"]
-collision_layer = 4
-collision_mask = 10
+collision_layer = 2
+collision_mask = 3
 mass = 0.00102041
 gravity_scale = 0.0
 can_sleep = false
@@ -32,10 +33,18 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="EnemyCheck" type="Area2D" parent="."]
-collision_mask = 10
+collision_layer = 4
+collision_mask = 3
 
 [node name="EnemyCheck" type="CollisionShape2D" parent="EnemyCheck"]
 shape = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 process_material = SubResource( 4 )
+
+[node name="CheckArea" parent="." instance=ExtResource( 2 )]
+collision_layer = 4
+collision_mask = 3
+LinkCollision = NodePath("../TheMissile")
+
+[editable path="CheckArea"]

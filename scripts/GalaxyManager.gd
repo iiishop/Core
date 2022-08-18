@@ -22,8 +22,8 @@ func _physics_process(delta):
 
 
 class Cargo:
-	var ID
-	var Price
+	var ID					#商店货物的物品ID
+	var Price				#商店货物的本地价格
 
 class Building:
 	var ID
@@ -31,23 +31,25 @@ class Building:
 
 class Task:
 	var ID
-	var Kind
-	var Need=[]
-	var Give=[]
+	var Kind				#任务种类
+	var Need=[]				#任务需要上交的
+	var Give=[]				#任务给予的
 
 class Galaxy:
 	var rd=RandomNumberGenerator.new()
-	var ID
-	var Pos:Vector2
-	var Population
-	var Resources=[]		#水金铁硅
-	var Shop=[]
+	
+	var ID					#唯一指定ID
+	var Pos:Vector2			#星系在星图中的位置
+	var Population			#星系的总人口
+	var Resources=[]		#水金铁硅   指的是星系中的各类资源行星数量
+	var Shop=[]				#星系商店中售卖的物品
 	var Patrol_Ship=[]
 	var War_Ship=[]
-	var Cargo_Ship=[]
 	var Buildings=[]
-	var Task=[]
-	var Store=[]
+	var Task=[]				#星系发布的任务
+	var Store=[]			#星系的仓库
+	var FavorabilityMap=[]	#此星系对阵营的好感度
+	var Level=1				#星系的等级
 	
 	func _init():
 		rd.randomize()
@@ -57,13 +59,7 @@ class Galaxy:
 			Store[i]=0
 		for i in range(4):
 			Resources[i]=rd.randi_range(10,500)
-
-
-
-
-
-
-
+	
 	func Mining():
 		for i in range(4):
 			Store[i+1]+=Resources[i]
@@ -78,7 +74,7 @@ class Galaxy:
 
 
 
-func InitPos(ID):
+func InitPos(ID):			#初始化星系在星图中的位置
 	rd.randomize()
 	GalaxyMap[ID].Pos=Vector2(rd.randf_range(0,500),rd.randf_range(0,500))
 	for i in range(ID):

@@ -2,12 +2,14 @@ extends RigidBody2D
 
 export var ID=0
 export var Force=0.0
-export var Moment=0.0
+export var RotSpeed=0.0
 export var CD=0.0
 export var Hurt=0.0
 export(PackedScene) var Explode
 var Enemy=null
 var is_dead=false
+var Camp
+var GalaxyNow
 
 
 
@@ -26,26 +28,34 @@ func _physics_process(delta):
 	
 	
 	if Enemy!=null:
+		angular_damp=0
 		var angleT=(Vector2(1,0).rotated(rotation)).angle_to(Enemy.global_position-global_position)
+		
 		linear_velocity=Vector2(linear_velocity.length(),0).rotated(rotation)
 		if angleT>0.1:
-			applied_torque=Moment
+			angular_velocity=RotSpeed
 			applied_force=Vector2.ZERO
 		elif angleT<-0.1:
-			applied_torque=-Moment
+			angular_velocity=-RotSpeed
 			applied_force=Vector2.ZERO
 		else:
 			look_at(Enemy.global_position)
 			applied_torque=0
 			angular_velocity=0
 			applied_force=Vector2(Force,0).rotated(rotation)
+	else:
+		angular_damp=1
 
 
 
 func _on_EnemyCheck_body_entered(body):
-	if Enemy==null:
-		Enemy=body
-
+	if Enemy==null and body.Camp!=Camp:
+		if Camp==-1:
+			if get_node("/root/World/GalaxyManager").GalaxyMap[GalaxyNow].FavorabilityMap[body.Camp]<0:
+				Enemy=body
+		else:
+			if get_node("/root/World/CampManager").CampMap[Camp].FavorabilityMap[body.Camp]<0:
+				Enemy=body
 
 func _on_EnemyCheck_body_exited(body):
 	if body==Enemy:

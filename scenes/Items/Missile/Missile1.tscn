@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/BasicModule/MissileBasic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://asset/Missile1.png" type="Texture" id=2]
@@ -13,13 +13,17 @@ height = 14.0001
 resource_local_to_scene = true
 radius = 200.0
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 3.0
+height = 14.0
+
 [node name="Missile" instance=ExtResource( 1 )]
 mass = 10.0
 contacts_reported = 1
 contact_monitor = true
 ID = 5
 Force = 500.0
-Moment = 200.0
+RotSpeed = 1.0
 CD = 10.0
 Explode = ExtResource( 3 )
 
@@ -28,7 +32,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="EnemyCheck" parent="." index="1"]
-collision_layer = 4
+collision_layer = 2
 
 [node name="EnemyCheck" parent="EnemyCheck" index="0"]
 shape = SubResource( 2 )
@@ -43,6 +47,12 @@ local_coords = false
 rotation = 1.5708
 texture = ExtResource( 2 )
 
+[node name="CheckCollision" parent="CheckArea" index="0"]
+rotation = 1.5708
+shape = SubResource( 3 )
+
 [connection signal="body_entered" from="." to="." method="_on_Missile_body_entered"]
 [connection signal="body_entered" from="EnemyCheck" to="." method="_on_EnemyCheck_body_entered"]
 [connection signal="body_exited" from="EnemyCheck" to="." method="_on_EnemyCheck_body_exited"]
+
+[editable path="CheckArea"]
