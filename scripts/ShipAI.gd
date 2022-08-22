@@ -23,6 +23,7 @@ func _ready():
 	rd.randomize()
 
 func _physics_process(delta):
+	micc()
 #	if target!=null:			#test
 #		Attack()
 	Idle()
@@ -57,6 +58,7 @@ func Idle():
 		rd.randomize()
 		StartPos=global_position
 		Pos=Vector2(rd.randf_range(0,10000),rd.randf_range(0,10000))
+		print(Pos)
 	Move(Pos)
 
 func Patral():
@@ -122,6 +124,10 @@ func Shadow(Pos:Vector2):			#跟踪Pos，Pos必须为global_position
 				linear_damp=1.3
 			if abs(linear_velocity.length()-target.linear_velocity.length())<=1:
 				applied_force=Vector2.ZERO
+
+
+func micc():			#姿态调整
+	pass
 
 
 func _on_AttackArea_body_entered(body):

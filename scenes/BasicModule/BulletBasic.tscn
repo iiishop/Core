@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://asset/icon.png" type="Texture" id=1]
+[ext_resource path="res://asset/new folder/icon.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Bullet.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Another/CheckCollision.tscn" type="PackedScene" id=3]
 

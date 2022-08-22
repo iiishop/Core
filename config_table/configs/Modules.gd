@@ -26,7 +26,7 @@ func _get_data_table():
 			DataType.new({'id': 2,'name': '船体','path': 'res://scenes/Body/ShipBody.tscn','description': '普通的船体，可以当做填充物或者临时护盾','type': 0,}),
 			DataType.new({'id': 3,'name': 'AIM120导弹发射器','path': 'res://scenes/Weapon/MissileLauncher/AIM120MissileLauncher.tscn','description': '典型的跟踪导弹发射器，只需要用到很少的电力维持','type': 1,}),
 			DataType.new({'id': 4,'name': '小型电力推进器','path': 'res://scenes/Engine/SmallEleEngine.tscn','description': '均衡的推进器，只要有电，哪里都能去到','type': 2,}),
-			DataType.new({'id': 5,}),
+			DataType.new({'id': 5,'name': '小型储藏箱','path': 'res://scenes/Body/SmallStore.tscn','description': '1','type': 0,}),
 			DataType.new({'id': 6,}),
 			DataType.new({'id': 7,}),
 			DataType.new({'id': 8,}),

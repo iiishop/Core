@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Missile1.png-8a283d0c5c4dbe7962a01a1012502efb.stex"
+path="res://.import/Force Arrow.png-2b8a731e54febf782a6cbab8dfa21362.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Missile1.png"
-dest_files=[ "res://.import/Missile1.png-8a283d0c5c4dbe7962a01a1012502efb.stex" ]
+source_file="res://asset/new folder/Force Arrow.png"
+dest_files=[ "res://.import/Force Arrow.png-2b8a731e54febf782a6cbab8dfa21362.stex" ]
 
 [params]
 

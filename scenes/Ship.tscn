@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/ShipAI.gd" type="Script" id=1]
-[ext_resource path="res://asset/frigate_2.png" type="Texture" id=2]
+[ext_resource path="res://asset/new folder/frigate_2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/BasicModule/ImmobileMissileLauncherBasic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Items/Missile/Missile1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/BasicModule/Store.tscn" type="PackedScene" id=5]

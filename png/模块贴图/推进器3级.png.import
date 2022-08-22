@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StartGalaxy.png-77842df7d444dd2019e1cac8cc815125.stex"
+path="res://.import/推进器3级.png-f2675eff65951c52da609936fe7666fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/StartGalaxy.png"
-dest_files=[ "res://.import/StartGalaxy.png-77842df7d444dd2019e1cac8cc815125.stex" ]
+source_file="res://png/模块贴图/推进器3级.png"
+dest_files=[ "res://.import/推进器3级.png-f2675eff65951c52da609936fe7666fd.stex" ]
 
 [params]
 

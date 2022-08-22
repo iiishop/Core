@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MissilePlatform1.png-0ad3c2b638f8a7fe41539c59f5761c30.stex"
+path="res://.import/制氧机.png-c9b7c97b5929e7d91accbedb866f10e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/MissilePlatform1.png"
-dest_files=[ "res://.import/MissilePlatform1.png-0ad3c2b638f8a7fe41539c59f5761c30.stex" ]
+source_file="res://png/模块贴图/制氧机.png"
+dest_files=[ "res://.import/制氧机.png-c9b7c97b5929e7d91accbedb866f10e4.stex" ]
 
 [params]
 

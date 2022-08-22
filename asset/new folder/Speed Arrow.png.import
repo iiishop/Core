@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0001.png-31c0af6342e44f1a891f7ec4eb992b90.stex"
+path="res://.import/Speed Arrow.png-93e4fede358ed1de00742e1cd05256ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Sprite-0001.png"
-dest_files=[ "res://.import/Sprite-0001.png-31c0af6342e44f1a891f7ec4eb992b90.stex" ]
+source_file="res://asset/new folder/Speed Arrow.png"
+dest_files=[ "res://.import/Speed Arrow.png-93e4fede358ed1de00742e1cd05256ca.stex" ]
 
 [params]
 

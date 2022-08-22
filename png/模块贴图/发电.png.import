@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SmallEleEngine.png-1cc34c9118148b18d5303c8fc19ddc27.stex"
+path="res://.import/发电.png-1748f52424bb28cba40bad1ca015c21b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/SmallEleEngine.png"
-dest_files=[ "res://.import/SmallEleEngine.png-1cc34c9118148b18d5303c8fc19ddc27.stex" ]
+source_file="res://png/模块贴图/发电.png"
+dest_files=[ "res://.import/发电.png-1748f52424bb28cba40bad1ca015c21b.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2.png-c25c60ecb80001fb93f5ce4e8995ec56.stex"
+path="res://.import/导弹发射器1.png-cbf3f4ab5c681198d476d2fd64101207.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/2.png"
-dest_files=[ "res://.import/2.png-c25c60ecb80001fb93f5ce4e8995ec56.stex" ]
+source_file="res://png/模块贴图/导弹发射器1.png"
+dest_files=[ "res://.import/导弹发射器1.png-cbf3f4ab5c681198d476d2fd64101207.stex" ]
 
 [params]
 

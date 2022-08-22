@@ -2,9 +2,9 @@ extends "res://scripts/BasicModule.gd"
 
 
 
-export(PackedScene) var Bullet_Scene	#子弹实例
+export(PackedScene) var Bullet_Scene		#子弹实例
 export var CD=0.0						#发射间隔 s
-export var Firing_Range=0.0
+export var Firing_Range=0.0				#自动发射的射程
 var CDNow=0.0							#现在经过了多久cd
 var Is_Ready=false
 

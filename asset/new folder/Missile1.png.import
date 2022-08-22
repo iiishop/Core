@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spaceport Background.png-6339b8f57e70b284dd7a1de057c7e39e.stex"
+path="res://.import/Missile1.png-82db63761b468fbff7ebf03cd64bfd46.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Spaceport Background.png"
-dest_files=[ "res://.import/Spaceport Background.png-6339b8f57e70b284dd7a1de057c7e39e.stex" ]
+source_file="res://asset/new folder/Missile1.png"
+dest_files=[ "res://.import/Missile1.png-82db63761b468fbff7ebf03cd64bfd46.stex" ]
 
 [params]
 
@@ -20,8 +20,8 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
-flags/mipmaps=false
+flags/filter=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

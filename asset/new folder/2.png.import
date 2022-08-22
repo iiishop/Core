@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frigate_2.png-e012a4ecd7423fb3c2b995118240d99f.stex"
+path="res://.import/2.png-45a099693d895840812e0395e8b5a630.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/frigate_2.png"
-dest_files=[ "res://.import/frigate_2.png-e012a4ecd7423fb3c2b995118240d99f.stex" ]
+source_file="res://asset/new folder/2.png"
+dest_files=[ "res://.import/2.png-45a099693d895840812e0395e8b5a630.stex" ]
 
 [params]
 

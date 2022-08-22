@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Force Arrow.png-471a416ab89f55096fa8be134725d49a.stex"
+path="res://.import/机枪塔1级.png-6b0c7f85a3454b8ab0823922477b27d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Force Arrow.png"
-dest_files=[ "res://.import/Force Arrow.png-471a416ab89f55096fa8be134725d49a.stex" ]
+source_file="res://png/模块贴图/机枪塔1级.png"
+dest_files=[ "res://.import/机枪塔1级.png-6b0c7f85a3454b8ab0823922477b27d1.stex" ]
 
 [params]
 

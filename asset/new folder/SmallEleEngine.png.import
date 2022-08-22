@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0002 - 副本.png-dadf9f7d17cabef19175611a5ad4645b.stex"
+path="res://.import/SmallEleEngine.png-9a46bf2f654fd7b54627a6d6e359864d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Sprite-0002 - 副本.png"
-dest_files=[ "res://.import/Sprite-0002 - 副本.png-dadf9f7d17cabef19175611a5ad4645b.stex" ]
+source_file="res://asset/new folder/SmallEleEngine.png"
+dest_files=[ "res://.import/SmallEleEngine.png-9a46bf2f654fd7b54627a6d6e359864d.stex" ]
 
 [params]
 

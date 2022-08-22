@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MissileLoader1.png-f7628d19866d1f8585f06766cb8b767f.stex"
+path="res://.import/氢气储存.png-20c3efe15e0b82de048eb1ad585d224a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/MissileLoader1.png"
-dest_files=[ "res://.import/MissileLoader1.png-f7628d19866d1f8585f06766cb8b767f.stex" ]
+source_file="res://png/模块贴图/氢气储存.png"
+dest_files=[ "res://.import/氢气储存.png-20c3efe15e0b82de048eb1ad585d224a.stex" ]
 
 [params]
 
