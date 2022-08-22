@@ -24,9 +24,9 @@ func _ready():
 
 func _physics_process(delta):
 	micc()
-#	if target!=null:			#test
-#		Attack()
-	Idle()
+	if target!=null:			#test
+		Attack()
+#	Idle()
 
 
 enum Behavior{

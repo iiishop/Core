@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/BasicModule/RotorBasic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://png/模块贴图/转子.png" type="Texture" id=2]
+[ext_resource path="res://scripts/AssistScripts/Rotate.gd" type="Script" id=3]
+[ext_resource path="res://png/模块贴图/陀螺仪.png" type="Texture" id=4]
+
+[node name="Rotor" instance=ExtResource( 1 )]
+ID = 9
+MaxHP = 100
+Mass = 250
+Max_Power = 10
+Can_Build_Up = true
+Can_Build_Down = true
+Can_Build_Left = true
+Can_Build_Right = true
+Moment = 100000
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="Sprite" type="Sprite" parent="Sprite" index="0"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )

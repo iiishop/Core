@@ -5,7 +5,7 @@ extends Node2D
 #所有模块必备的基础类
 export var ID=0
 export var MaxHP=1						#模块血量上限
-export var HP=0							#模块当前血量
+var HP=0									#模块当前血量
 export var Mass=0						#模块重量
 export var Max_Power=0					#模块所需功率
 export var Is_Working=true				#模块是否被启用

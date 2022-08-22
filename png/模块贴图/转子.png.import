@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/蓄电.png-dfca71c4c468b89ee795e39eaa78379d.stex"
+path="res://.import/转子.png-15c8e288c09e4317c01586e2b3a6515e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://png/模块贴图/蓄电.png"
-dest_files=[ "res://.import/蓄电.png-dfca71c4c468b89ee795e39eaa78379d.stex" ]
+source_file="res://png/模块贴图/转子.png"
+dest_files=[ "res://.import/转子.png-15c8e288c09e4317c01586e2b3a6515e.stex" ]
 
 [params]
 
