@@ -11,6 +11,7 @@ func _ready():
 		var t=load("res://scenes/Star.tscn").instance()
 		
 		get_parent().get_node("GUI/Galaxy/Map/Map").add_child(t)
+		t.ID=i
 		t.position=GalaxyMap[i].Pos
 
 func _physics_process(delta):
@@ -31,7 +32,7 @@ class Building:
 
 class Task:
 	var ID
-	var Kind				#任务种类
+	var Kind					#任务种类
 	var Need=[]				#任务需要上交的
 	var Give=[]				#任务给予的
 
@@ -39,15 +40,17 @@ class Galaxy:
 	var rd=RandomNumberGenerator.new()
 	
 	var ID					#唯一指定ID
+	var Name
+	var Camp=-1
 	var Pos:Vector2			#星系在星图中的位置
 	var Population			#星系的总人口
-	var Resources=[]		#水金铁硅   指的是星系中的各类资源行星数量
+	var Resources=[]			#水金铁硅   指的是星系中的各类资源行星数量
 	var Shop=[]				#星系商店中售卖的物品
 	var Patrol_Ship=[]
 	var War_Ship=[]
 	var Buildings=[]
 	var Task=[]				#星系发布的任务
-	var Store=[]			#星系的仓库
+	var Store=[]				#星系的仓库
 	var FavorabilityMap=[]	#此星系对阵营的好感度
 	var Level=1				#星系的等级
 	

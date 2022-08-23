@@ -15,13 +15,13 @@ func _ready():
 			for j in range(7):
 				i.FavorabilityMap.append(0)
 			i.FavorabilityMap[1]=-10
-			for j in get_parent().get_node("GalaxyManager").GalaxyMap:
+			for j in GalaxyManager.GalaxyMap:
 				j.FavorabilityMap.append(0)
 		else:
 			for j in range(7):
 				i.FavorabilityMap.append(-10)
 			i.FavorabilityMap[1]=0
-			for j in get_parent().get_node("GalaxyManager").GalaxyMap:
+			for j in GalaxyManager.GalaxyMap:
 				j.FavorabilityMap.append(-10)
 
 func CampAdd(GalaxyID):						#创建一个新的阵营，提供阵营首都的星系ID
