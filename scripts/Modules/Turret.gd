@@ -14,8 +14,9 @@ func _ready():
 func _physics_process(delta):
 	if CDNow>0:
 		CDNow-=delta
-	else:
-		CDNow=0
+	if get_parent().name!="MousePoint":
+		if CDNow<=0 and get_parent().Store[Bullet_Scene.instance().ID]!=null and get_parent().Store[Bullet_Scene.instance().ID]>0:
+			CDNow=0
 
 
 
