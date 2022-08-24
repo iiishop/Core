@@ -8,7 +8,7 @@
 [ext_resource path="res://asset/StartMenu/Userinterface_1_2.png" type="Texture" id=6]
 [ext_resource path="res://asset/StartMenu/Userinterface_2_3.png" type="Texture" id=7]
 [ext_resource path="res://asset/StartMenu/Userinterface_2.png" type="Texture" id=8]
-[ext_resource path="res://asset/2.png" type="Texture" id=9]
+[ext_resource path="res://asset/new folder/2.png" type="Texture" id=9]
 [ext_resource path="res://scripts/AssistScripts/StartMenu/quit.gd" type="Script" id=10]
 [ext_resource path="res://scripts/AssistScripts/StartMenu/GameStart.gd" type="Script" id=11]
 [ext_resource path="res://scripts/AssistScripts/StartMenu/ScreenRotate.gd" type="Script" id=12]
@@ -37,33 +37,42 @@ margin_top = -89.0
 texture = ExtResource( 2 )
 expand = true
 
-[node name="botton_down" type="Sprite" parent="Control/TextureRect/bottom"]
-visible = false
-position = Vector2( -8.125, -1 )
-scale = Vector2( 0.625, 1 )
+[node name="backgrounp" type="TextureRect" parent="Control/TextureRect/bottom"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -30.5
+margin_right = 100.0
+margin_bottom = 30.5
 texture = ExtResource( 8 )
 
-[node name="right" type="Sprite" parent="Control/TextureRect/bottom/botton_down"]
-position = Vector2( 62, 10 )
-texture = ExtResource( 7 )
+[node name="right" type="TextureButton" parent="Control/TextureRect/bottom/backgrounp"]
+margin_left = 124.0
+margin_top = 25.0
+margin_right = 200.0
+margin_bottom = 65.0
+texture_normal = ExtResource( 7 )
 script = ExtResource( 10 )
 
-[node name="middle" type="Sprite" parent="Control/TextureRect/bottom/botton_down"]
-position = Vector2( 0, -8 )
-texture = ExtResource( 5 )
-script = ExtResource( 11 )
-
-[node name="left" type="Sprite" parent="Control/TextureRect/bottom/botton_down"]
-position = Vector2( -62, 10 )
-texture = ExtResource( 4 )
+[node name="left" type="TextureButton" parent="Control/TextureRect/bottom/backgrounp"]
+margin_top = 25.0
+margin_right = 76.0
+margin_bottom = 65.0
+texture_normal = ExtResource( 4 )
 script = ExtResource( 1 )
+
+[node name="middle" type="TextureButton" parent="Control/TextureRect/bottom/backgrounp"]
+margin_left = 50.0
+margin_top = -6.0
+margin_right = 150.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 5 )
+script = ExtResource( 11 )
 
 [node name="top" type="TextureRect" parent="Control/TextureRect"]
 anchor_right = 1.0
 margin_bottom = 18.0
 texture = ExtResource( 6 )
 expand = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 10, 10 )

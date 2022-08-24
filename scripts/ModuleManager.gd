@@ -188,7 +188,7 @@ func HydManage():
 	for i in get_children():
 		if i.is_in_group("HydStore") and i.Now_Hyd<i.Max_Hyd and i.Is_Working:
 			count+=1
-	if count>0 and Store[1]!=0:
+	if count>0 and Store[1]!=null and Store[1]!=0:
 		Store[1]-=1
 		for i in get_children():
 			if i.is_in_group("Store") and i.Bag.Remove(1):

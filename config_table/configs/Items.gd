@@ -27,7 +27,7 @@ func _get_data_table():
 			DataType.new({'id': 2,'name': '金','weight': 0.1,'price': 1000,}),
 			DataType.new({'id': 3,'name': '铁','weight': 0.1,'price': 100,}),
 			DataType.new({'id': 4,'name': '硅','weight': 0.1,'price': 500,}),
-			DataType.new({'id': 5,'name': 'AIM-020制导导弹','weight': 10,'price': 500,}),
+			DataType.new({'id': 5,'name': 'AIM-120制导导弹','weight': 10,'price': 500,}),
 			DataType.new({'id': 6,}),
 			DataType.new({'id': 7,}),
 			DataType.new({'id': 8,}),

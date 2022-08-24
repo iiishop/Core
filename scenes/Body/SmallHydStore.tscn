@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/BasicModule/HydStoreBasic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://png/模块贴图/氢气储存.png" type="Texture" id=2]
+
+[node name="HydStore" instance=ExtResource( 1 )]
+ID = 8
+MaxHP = 1000
+Mass = 250
+Max_Power = 10
+Can_Build_Up = true
+Can_Build_Down = true
+Can_Build_Left = true
+Can_Build_Right = true
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+hframes = 2

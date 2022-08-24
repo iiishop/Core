@@ -1,13 +1,12 @@
 extends "res://scripts/BasicModule.gd"
 
 var Bag=[]
-export var Max_Weight=0.0
+export var Max_Weight=0.0		#支持的最大重量
 var Now_Weight=0.0
 
 func _ready():
 	add_to_group("Store")
-	for i in range(50):
-		Add(5)
+
 
 func Add(n):
 	if Now_Weight+ConfigHelper.Items.by_id(n).weight<=Max_Weight:

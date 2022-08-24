@@ -28,13 +28,13 @@ _global_script_class_icons={
 
 config/name="星舰文明"
 run/main_scene="res://scenes/StartMenu.tscn"
-config/icon="res://asset/icon.png"
+config/icon="res://asset/new folder/icon.png"
 
 [autoload]
 
+ConfigHelper="*res://config_table//ConfigHelper.gd"
 WorldVar="*res://scripts/AssistScripts/WorldVar.gd"
 SignalBus="*res://scripts/AssistScripts/SignalBus.gd"
-ConfigHelper="*res://config_table//ConfigHelper.gd"
 
 [config_table_plugin]
 
@@ -42,13 +42,17 @@ root_directory="res://config_table"
 config_table_template_path="templates/ConfigTable.gd.template"
 config_helper_save_path="ConfigHelper.gd"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/config_table_plugin/plugin.cfg" )
 
 [gui]
 
-theme/custom_font="res://asset/ChineseBlackFont.tres"
+theme/custom_font="res://asset/new folder/ChineseBlackFont.tres"
 
 [input]
 

@@ -53,6 +53,8 @@ func _on_ModulesList_item_selected(index):
 			MousePoint.add_child(load(ConfigHelper.Modules.by_id(index+2).path).instance())
 	else:
 		get_node("../ModuleDescription").text=""
+		for i in get_parent().get_parent().get_node("Core/ModuleManager/MousePoint").get_children():
+			i.free()
 	
 
 

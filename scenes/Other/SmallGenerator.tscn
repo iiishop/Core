@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/BasicModule/GeneratorBasic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://png/模块贴图/发电.png" type="Texture" id=2]
+
+[node name="Generator" instance=ExtResource( 1 )]
+ID = 6
+MaxHP = 1000
+Mass = 250
+Can_Build_Up = true
+Can_Build_Down = true
+Can_Build_Left = true
+Can_Build_Right = true
+Power = 100.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+hframes = 2

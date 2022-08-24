@@ -24,5 +24,5 @@ func _input(event):
 			get_node("Label").visible=false
 			get_tree().paused=true
 			get_parent().get_parent().get_node("Core").rotation=0
-			get_parent().get_parent().get_node("BackGroundManager/BackGroundNow").texture=load("res://asset/Spaceport Background.png")
+			get_parent().get_parent().get_node("BackGroundManager/BackGroundNow").texture=load("res://asset/new folder/Spaceport Background.png")
 			WorldVar.Is_In_Creating_Mode=true
