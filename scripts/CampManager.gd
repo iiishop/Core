@@ -5,27 +5,45 @@ var CampMap=[]
 var rd=RandomNumberGenerator.new()
 onready var GalaxyManager=get_parent().get_node("GalaxyManager")
 func _ready():
-	for i in range(7):
-		CampMap.append(Camp.new())
-		CampMap[i].ID=i
-	CampMap[0].Name="玩家"
-	CampMap[1].Name="海盗"
-	for i in CampMap:
-		if i.Name!="海盗":
-			for j in range(7):
-				i.FavorabilityMap.append(0)
-			i.FavorabilityMap[1]=-10
-			for j in GalaxyManager.GalaxyMap:
-				j.FavorabilityMap.append(0)
-		else:
-			for j in range(7):
-				i.FavorabilityMap.append(-10)
-			i.FavorabilityMap[1]=0
-			for j in GalaxyManager.GalaxyMap:
-				j.FavorabilityMap.append(-10)
+	CampMap.append(Camp.new())
+	CampMap[0].ID=0
+	CampMap[0].Name="海盗"
+	rd.randomize()
+	CampMap[0].Galaxy.append(rd.randi_range(0,199))
+	GalaxyManager.GalaxyMap[CampMap[0].Galaxy[0]].Camp=0
+	CampMap[0].FavorabilityMap.append(100)
+	for i in GalaxyManager.GalaxyMap:
+		i.FavorabilityMap.append(-10)
+	GalaxyManager.GalaxyMap[CampMap[0].Galaxy[0]].FavorabilityMap[0]=100
+	
+	
+	for i in range(6):
+		rd.randomize()
+		while CampAdd(rd.randi_range(0,199)):
+			break
+	CampMap[1].Name="玩家"
+
+
 
 func CampAdd(GalaxyID):						#创建一个新的阵营，提供阵营首都的星系ID
-	pass
+	if GalaxyManager.GalaxyMap[GalaxyID].Camp==-1:
+		print("1")
+		CampMap.append(Camp.new())
+		CampMap[CampMap.size()-1].ID=CampMap.size()-1
+		CampMap[CampMap.size()-1].Galaxy.append(GalaxyID)
+		GalaxyManager.GalaxyMap[GalaxyID].Camp=CampMap.size()-1
+		for i in CampMap:
+			if i.Name=="海盗":
+				i.FavorabilityMap.append(-10)
+			elif i.ID==CampMap.size()-1:
+				i.FavorabilityMap.append(100)
+			else:
+				i.FavorabilityMap.append(0)
+		for i in GalaxyManager.GalaxyMap:
+			i.FavorabilityMap.append(0)
+		return true
+	else:
+		return false
 
 func CampRemove(ID):							#删除一个阵营，提供阵营ID
 	pass
