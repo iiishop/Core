@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://png/星图/star_map_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/BasicModule/Core.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://scenes/EscMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/GalaxyManager.gd" type="Script" id=9]
 [ext_resource path="res://scripts/SpacePort.gd" type="Script" id=10]
-[ext_resource path="res://scenes/Map.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/GUI.gd" type="Script" id=12]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=13]
 [ext_resource path="res://scripts/Bag.gd" type="Script" id=14]
@@ -111,10 +110,9 @@ margin_left = -363.0
 margin_top = -195.0
 margin_right = 401.0
 margin_bottom = 322.0
-
-[node name="Map" parent="GUI/Galaxy/Map" instance=ExtResource( 11 )]
-position = Vector2( 10, 13 )
 script = ExtResource( 13 )
+
+[node name="Map" type="Node2D" parent="GUI/Galaxy/Map"]
 
 [node name="ItemList" type="ItemList" parent="GUI/Galaxy/Map"]
 anchor_left = 1.0
@@ -195,4 +193,3 @@ texture = ExtResource( 6 )
 [editable path="EscMenu"]
 [editable path="ShipManager/Ship"]
 [editable path="ShipManager/Ship/ModuleManager/ImmobileMissileLauncher"]
-[editable path="GUI/Galaxy/Map/Map"]
