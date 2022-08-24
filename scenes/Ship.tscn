@@ -33,7 +33,7 @@ script = ExtResource( 6 )
 
 [node name="ImmobileMissileLauncher" parent="ModuleManager" instance=ExtResource( 3 )]
 Missile = ExtResource( 4 )
-CD = 0.5
+CD = 1.0
 Firing_Range = 300.0
 
 [node name="MissileLoader" parent="ModuleManager/ImmobileMissileLauncher/MissilePlatform" index="0"]
@@ -50,10 +50,13 @@ Max_Weight = 500.0
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 4
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource( 2 )
 
+[connection signal="area_entered" from="AttackArea" to="." method="_on_AttackArea_area_entered"]
+[connection signal="area_exited" from="AttackArea" to="." method="_on_AttackArea_area_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_AttackArea_body_exited"]
 

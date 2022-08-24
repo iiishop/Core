@@ -8,7 +8,7 @@
 [node name="Rotor" instance=ExtResource( 1 )]
 ID = 9
 MaxHP = 100
-Mass = 250
+Mass = 50
 Max_Power = 10
 Can_Build_Up = true
 Can_Build_Down = true

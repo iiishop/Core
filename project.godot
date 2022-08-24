@@ -32,9 +32,9 @@ config/icon="res://asset/new folder/icon.png"
 
 [autoload]
 
-ConfigHelper="*res://config_table//ConfigHelper.gd"
 WorldVar="*res://scripts/AssistScripts/WorldVar.gd"
 SignalBus="*res://scripts/AssistScripts/SignalBus.gd"
+ConfigHelper="*res://config_table//ConfigHelper.gd"
 
 [config_table_plugin]
 

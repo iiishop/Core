@@ -6,7 +6,8 @@ var Now_Weight=0.0
 
 func _ready():
 	add_to_group("Store")
-
+	for i in range(20):
+		Add(5)
 
 func Add(n):
 	if Now_Weight+ConfigHelper.Items.by_id(n).weight<=Max_Weight:
