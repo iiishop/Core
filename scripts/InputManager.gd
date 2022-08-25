@@ -2,6 +2,7 @@ extends RigidBody2D
 
 var Camp=0								#所属阵营
 var GalaxyNow=0
+var Is_Ship=true
 
 var IsBraking=false
 var IsRotateU=false
@@ -23,7 +24,6 @@ func _ready():
 
 
 func _physics_process(delta):
-
 
 	if (Input.is_action_just_pressed("Clockwise_Rotation") or Input.is_action_just_released("Anticlockwise_Rotation")) and !IsBraking and !WorldVar.Is_In_Creating_Mode:
 		add_torque(get_node("ModuleManager").Moment*get_node("ModuleManager").PowerPercent) 

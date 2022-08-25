@@ -2,10 +2,10 @@ extends "res://scripts/BasicModule.gd"
 
 
 
-export(PackedScene) var Bullet_Scene	#子弹实例
+export(PackedScene) var Bullet_Scene			#子弹实例
 export var CD=0.0							#发射间隔 s
-export var Firing_Range=0.0
-var CDNow=0.0							#现在经过了多久cd
+export var Firing_Range=0.0					#自动开火范围
+var CDNow=0.0								#现在经过了多久cd
 var Is_Ready=false
 
 func _ready():
@@ -14,8 +14,9 @@ func _ready():
 func _physics_process(delta):
 	if CDNow>0:
 		CDNow-=delta
-	else:
-		CDNow=0
+	if get_parent().name!="MousePoint":
+		if CDNow<=0 and get_parent().Store[Bullet_Scene.instance().ID]!=null and get_parent().Store[Bullet_Scene.instance().ID]>0:
+			CDNow=0
 	
 	Rotate(delta)
 
