@@ -51,7 +51,6 @@ func _physics_process(delta):
 
 func _on_EnemyCheck_body_entered(body):
 	if Enemy==null and body.Camp!=Camp:
-		print(body)
 		if Camp==-1:
 			if get_node("/root/World/GalaxyManager").GalaxyMap[GalaxyNow].FavorabilityMap[body.Camp]<0:
 				Enemy=body

@@ -27,16 +27,21 @@ func _ready():
 
 func CampAdd(GalaxyID):						#创建一个新的阵营，提供阵营首都的星系ID
 	if GalaxyManager.GalaxyMap[GalaxyID].Camp==-1:
-		print("1")
 		CampMap.append(Camp.new())
 		CampMap[CampMap.size()-1].ID=CampMap.size()-1
 		CampMap[CampMap.size()-1].Galaxy.append(GalaxyID)
 		GalaxyManager.GalaxyMap[GalaxyID].Camp=CampMap.size()-1
 		for i in CampMap:
-			if i.Name=="海盗":
+			if i.ID==0:
 				i.FavorabilityMap.append(-10)
 			elif i.ID==CampMap.size()-1:
-				i.FavorabilityMap.append(100)
+				for j in CampMap:
+					if j.ID==0:
+						i.FavorabilityMap.append(-10)
+					elif j.ID==i.ID:
+						i.FavorabilityMap.append(100)
+					else:
+						i.FavorabilityMap.append(0)
 			else:
 				i.FavorabilityMap.append(0)
 		for i in GalaxyManager.GalaxyMap:

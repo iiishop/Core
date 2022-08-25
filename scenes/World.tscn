@@ -83,7 +83,7 @@ visible = false
 script = ExtResource( 16 )
 
 [node name="Ship" parent="ShipManager" instance=ExtResource( 17 )]
-Camp = 1
+Camp = 0
 MaxRotSpeed = 30.0
 Force = 30.0
 Moment = 30.0

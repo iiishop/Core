@@ -64,7 +64,6 @@ func Idle():
 		rd.randomize()
 		StartPos=global_position
 		Pos=Vector2(rd.randf_range(0,10000),rd.randf_range(0,10000))
-		print(Pos)
 	Move(Pos)
 
 func Patral():
