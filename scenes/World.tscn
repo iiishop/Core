@@ -101,7 +101,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 
 [node name="Map" type="WindowDialog" parent="GUI/Galaxy"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
