@@ -1,6 +1,5 @@
-extends RigidBody2D
+extends "res://scripts/Item_Basic.gd"
 
-export var ID=0
 export var Force=0.0
 export var RotSpeed=0.0
 export var CD=0.0

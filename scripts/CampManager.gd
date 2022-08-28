@@ -24,7 +24,6 @@ func _ready():
 	CampMap[1].Name="玩家"
 
 
-
 func CampAdd(GalaxyID):						#创建一个新的阵营，提供阵营首都的星系ID
 	if GalaxyManager.GalaxyMap[GalaxyID].Camp==-1:
 		CampMap.append(Camp.new())
@@ -50,8 +49,17 @@ func CampAdd(GalaxyID):						#创建一个新的阵营，提供阵营首都的�
 	else:
 		return false
 
+
 func CampRemove(ID):							#删除一个阵营，提供阵营ID
 	pass
+
+
+func CampExpand(CampID,GalaxyID):
+	CampMap[CampID].Galaxy.append(GalaxyID)
+	if GalaxyManager.GalaxyMap[GalaxyID].Camp!=-1:
+		CampMap[GalaxyManager.GalaxyMap[GalaxyID].Camp].Galaxy.erase(GalaxyID)
+	GalaxyManager.GalaxyMap[GalaxyID].Camp=CampID
+		
 
 
 class Camp:
@@ -61,10 +69,11 @@ class Camp:
 	var ID
 	var Name=""
 	var FavorabilityMap=[]					#与其他阵营的好感度
-	var Friend=[]							#友好阵营
-	var Hostile=[]							#敌对阵营
 	var Galaxy=[]							#拥有的星系
 	func _init():
-		for i in range(5):
+		for i in range(5):					#Init Name
 			rd.randomize()
 			Name+=char(65+rd.randi_range(0,26))
+	
+	
+

@@ -8,7 +8,6 @@ func _physics_process(delta):
 
 
 func _on_Galaxy_mouse_entered():
-	#get_node("GalaxyName")
 	if GalaxyManager.GalaxyMap[get_parent().ID].Camp>-1:
 		get_node("GalaxyCamp").text="阵营:"+CampManager.CampMap[GalaxyManager.GalaxyMap[get_parent().ID].Camp].Name
 	else:

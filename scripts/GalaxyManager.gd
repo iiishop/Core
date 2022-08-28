@@ -20,6 +20,9 @@ func _physics_process(delta):
 		
 		for i in GalaxyMap:
 			i.Mining()
+			i.Price_Adjust()
+
+
 
 
 class Cargo:
@@ -66,6 +69,9 @@ class Galaxy:
 	func Mining():
 		for i in range(4):
 			Store[i+1]+=Resources[i]
+	
+	func Price_Adjust():
+		pass
 
 
 

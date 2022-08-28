@@ -20,3 +20,7 @@ func InitMaxID():
 	while ConfigHelper.Items.has_id(MaxID):
 		MaxID+=1
 	MaxID-=1
+
+func Exchange(Self,Target,ItemID,n):
+	Self.Store[ItemID]-=n
+	Target.Store[ItemID]+=n
