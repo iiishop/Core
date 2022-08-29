@@ -54,7 +54,7 @@ func CampRemove(ID):							#删除一个阵营，提供阵营ID
 	pass
 
 
-func CampExpand(CampID,GalaxyID):
+func CampExpand(CampID,GalaxyID):				#阵营扩张调用函数
 	CampMap[CampID].Galaxy.append(GalaxyID)
 	if GalaxyManager.GalaxyMap[GalaxyID].Camp!=-1:
 		CampMap[GalaxyManager.GalaxyMap[GalaxyID].Camp].Galaxy.erase(GalaxyID)
