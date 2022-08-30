@@ -29,10 +29,11 @@ func _ready():
 	rd.randomize()
 
 func _physics_process(delta):
-	MicroAdjust()
-	if target!=null:			#test
-		Attack()
-#	Idle()
+	#MicroAdjust()
+#	if target!=null:			#test
+#		Attack()
+	Idle()
+	print(linear_velocity.length())
 
 
 enum Behavior{

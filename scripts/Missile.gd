@@ -1,9 +1,9 @@
 extends "res://scripts/Item_Basic.gd"
 
-export var Force=0.0
-export var RotSpeed=0.0
-export var CD=0.0
-export var Hurt=0.0
+export var Force=0.0					#推力
+export var RotSpeed=0.0				#旋转速度
+export var CD=0.0					#持续时长
+export var Hurt=0.0					#伤害
 export(PackedScene) var Explode
 var Enemy=null
 var is_dead=false
