@@ -8,11 +8,6 @@ func _ready():
 		GalaxyMap.append(Galaxy.new())
 		GalaxyMap[i].ID=i
 		InitPos(i)
-		var t=load("res://scenes/Star.tscn").instance()
-		
-		get_parent().get_node("GUI/Galaxy/Map/Map").add_child(t)
-		t.ID=i
-		t.position=GalaxyMap[i].Pos
 
 func _physics_process(delta):
 	if Time!=WorldVar.WorldTime:

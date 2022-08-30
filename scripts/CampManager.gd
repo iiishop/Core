@@ -3,7 +3,6 @@ extends Node2D
 
 var CampMap=[]
 var rd=RandomNumberGenerator.new()
-onready var GalaxyManager=get_parent().get_node("GalaxyManager")
 func _ready():
 	CampMap.append(Camp.new())
 	CampMap[0].ID=0

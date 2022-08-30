@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://png/星图/star_map_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/BasicModule/Core.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/EscMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/GalaxyManager.gd" type="Script" id=9]
 [ext_resource path="res://scripts/SpacePort.gd" type="Script" id=10]
+[ext_resource path="res://scripts/AssistScripts/Stars_Set.gd" type="Script" id=11]
 [ext_resource path="res://scripts/GUI.gd" type="Script" id=12]
 [ext_resource path="res://scripts/Map.gd" type="Script" id=13]
 [ext_resource path="res://scripts/Bag.gd" type="Script" id=14]
@@ -45,7 +46,6 @@ pause_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="Core"]
 pause_mode = 2
-current = true
 script = ExtResource( 4 )
 
 [node name="GalaxyManager" type="Node2D" parent="."]
@@ -88,6 +88,10 @@ MaxRotSpeed = 30.0
 Force = 30.0
 Moment = 30.0
 Distance = 150.0
+MaxSpeed = 100.0
+
+[node name="Camera2D" type="Camera2D" parent="ShipManager/Ship"]
+current = true
 
 [node name="GUI" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -113,6 +117,7 @@ script = ExtResource( 13 )
 
 [node name="Map" type="Node2D" parent="GUI/Galaxy/Map"]
 z_index = -1
+script = ExtResource( 11 )
 
 [node name="Background" type="Sprite" parent="GUI/Galaxy/Map/Map"]
 position = Vector2( 305.5, 258.5 )

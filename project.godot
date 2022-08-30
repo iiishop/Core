@@ -35,6 +35,9 @@ config/icon="res://asset/new folder/icon.png"
 WorldVar="*res://scripts/AssistScripts/WorldVar.gd"
 SignalBus="*res://scripts/AssistScripts/SignalBus.gd"
 ConfigHelper="*res://config_table//ConfigHelper.gd"
+GalaxyManager="*res://scripts/GalaxyManager.gd"
+CampManager="*res://scripts/CampManager.gd"
+ShipManager="*res://scripts/ShipManager.gd"
 
 [config_table_plugin]
 

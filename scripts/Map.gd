@@ -1,7 +1,7 @@
 extends WindowDialog
 
-onready var GalaxyMap=get_node("/root/World/GalaxyManager").GalaxyMap
-onready var CampMap=get_node("/root/World/CampManager").CampMap
+onready var GalaxyMap=GalaxyManager.GalaxyMap
+onready var CampMap=CampManager.CampMap
 
 
 
