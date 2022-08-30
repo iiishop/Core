@@ -67,10 +67,10 @@ class Camp:
 	
 	var ID
 	var Name=""
-	var FavorabilityMap=[]					#与其他阵营的好感度
-	var Galaxy=[]							#拥有的星系
+	var FavorabilityMap=[]						#与其他阵营的好感度
+	var Galaxy=[]								#拥有的星系
 	func _init():
-		for i in range(5):					#Init Name
+		for i in range(5):						#Init Name
 			rd.randomize()
 			Name+=char(65+rd.randi_range(0,26))
 	
