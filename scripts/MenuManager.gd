@@ -61,7 +61,7 @@ func _on_ModulesList_item_selected(index):
 func _on_Button_button_up():
 	var ModulesManager
 	ModulesManager=get_parent().get_parent().get_node("Core/ModuleManager")
-	get_node("../PlayerInterface/InterfaceModules").RefreshModules()
+	get_node("../PlayerInterface/HPInterface/InterfaceModules").RefreshModules()
 	get_node("../PlayerInterface").visible=true
 	get_node("../ModulesList").visible=false
 	get_node("../Control").visible=false

@@ -5,14 +5,14 @@ extends Node2D
 #所有模块必备的基础类
 export var ID=0
 export var MaxHP=1						#模块血量上限
-var HP=0									#模块当前血量
+var HP=0								#模块当前血量
 export var Mass=0						#模块重量
 export var Max_Power=0					#模块所需功率
 export var Is_Working=true				#模块是否被启用
 export var Can_Build_Up=false			#模块上方是否可以链接新模块
 export var Can_Build_Down=false			#模块下方是否可以链接新模块
 export var Can_Build_Left=false			#模块左方是否可以链接新模块
-export var Can_Build_Right=false			#模块右方是否可以链接新模块
+export var Can_Build_Right=false		#模块右方是否可以链接新模块
 export var Length=1						#模块高度
 export var Width=1						#模块宽度
 export var Type=3						#模块类别 0船体 1武器 2推进器 3其他

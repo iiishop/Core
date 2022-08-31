@@ -51,7 +51,7 @@ margin_bottom = -122.0
 scale = Vector2( 5, 5 )
 texture = ExtResource( 19 )
 
-[node name="InterfaceModules" type="Node2D" parent="CanvasLayer/PlayerInterface"]
+[node name="InterfaceModules" type="Node2D" parent="CanvasLayer/PlayerInterface/HPInterface"]
 script = ExtResource( 18 )
 
 [node name="Core" parent="." instance=ExtResource( 2 )]
