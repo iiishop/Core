@@ -103,7 +103,7 @@ func Idle():
 			Angle=rd.randf_range(-PI,PI)
 	
 	
-	if abs(global_position.x)>=50*GalaxyManager.GalaxyMap[GalaxyNow].Level or abs(global_position.y)>=50*GalaxyManager.GalaxyMap[GalaxyNow].Level:
+	if abs(global_position.x)>=5000*GalaxyManager.GalaxyMap[GalaxyNow].Level or abs(global_position.y)>=5000*GalaxyManager.GalaxyMap[GalaxyNow].Level:
 		Angle=Vector2.RIGHT.angle_to(Vector2.ZERO-global_position)
 
 

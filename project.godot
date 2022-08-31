@@ -32,12 +32,12 @@ config/icon="res://asset/new folder/icon.png"
 
 [autoload]
 
-ConfigHelper="*res://config_table//ConfigHelper.gd"
 WorldVar="*res://scripts/AssistScripts/WorldVar.gd"
 SignalBus="*res://scripts/AssistScripts/SignalBus.gd"
 GalaxyManager="*res://scripts/GalaxyManager.gd"
 CampManager="*res://scripts/CampManager.gd"
 ShipManager="*res://scripts/ShipManager.gd"
+ConfigHelper="*res://config_table//ConfigHelper.gd"
 
 [config_table_plugin]
 

@@ -46,6 +46,7 @@ pause_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="Core"]
 pause_mode = 2
+current = true
 script = ExtResource( 4 )
 
 [node name="GalaxyManager" type="Node2D" parent="."]
@@ -89,9 +90,6 @@ Force = 30.0
 Moment = 30.0
 Distance = 150.0
 MaxSpeed = 100.0
-
-[node name="Camera2D" type="Camera2D" parent="ShipManager/Ship"]
-current = true
 
 [node name="GUI" type="CanvasLayer" parent="."]
 pause_mode = 2
