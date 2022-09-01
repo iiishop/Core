@@ -10,6 +10,8 @@ var Is_Ready=true
 
 func _ready():
 	add_to_group("MissileLauncher")
+	add_to_group("Weapon1")
+	
 	ML=get_node("MissilePlatform/MissileLoad")
 	ML.position=get_node("MissilePlatform/MissilePosition").position
 	T=get_node("MissilePlatform/MissileLoader").position-get_node("MissilePlatform/MissilePosition").position

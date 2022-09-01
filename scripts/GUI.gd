@@ -6,8 +6,11 @@ func _input(event):
 		if event.scancode == KEY_M:
 			get_node("Galaxy/Map").popup()
 			get_tree().paused=true
-		if event.scancode == KEY_B:
+		if event.scancode == KEY_I:
 			get_node("Bag/Bag").popup()
+			get_tree().paused=true
+		if event.scancode == KEY_B:
+			get_node("WeaponGroup/WeaponGroup").popup()
 			get_tree().paused=true
 
 
@@ -16,4 +19,8 @@ func _on_Map_popup_hide():
 
 
 func _on_Bag_popup_hide():
+	get_tree().paused=false
+
+
+func _on_WeaponGroup_popup_hide():
 	get_tree().paused=false

@@ -6,6 +6,7 @@
 
 [node name="MissileLauncher" instance=ExtResource( 3 )]
 ID = 3
+NAME = "AIM120导弹发射器"
 MaxHP = 500
 Mass = 1000
 Max_Power = 10

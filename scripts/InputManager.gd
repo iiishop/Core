@@ -134,6 +134,7 @@ func _physics_process(delta):
 				linear_velocity=Vector2(0,0)
 				V=Vector2(0,0)
 
+
 			if V.x>0.001:
 				MoveLeft()
 			if V.x>=-0.0008 and V.x<=0.0012:

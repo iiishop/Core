@@ -58,19 +58,26 @@ func _on_ModulesList_item_selected(index):
 	
 
 
-func _on_Button_button_up():
-	var ModulesManager
-	ModulesManager=get_parent().get_parent().get_node("Core/ModuleManager")
+func _on_Button_button_up():				#离开空间站
+	
 	get_node("../PlayerInterface/HPInterface/InterfaceModules").RefreshModules()
+	get_parent().get_parent().get_node("GUI/WeaponGroup/WeaponGroup").RefreshWeaponModules()
+	get_parent().get_parent().get_node("BackGroundManager/BackGroundNow").texture=get_parent().get_parent().get_node("BackGroundManager").BackgroundNow
+	
 	get_node("../PlayerInterface").visible=true
 	get_node("../ModulesList").visible=false
 	get_node("../Control").visible=false
+	
 	for i in MousePoint.get_children():
 		i.queue_free()
+	
 	get_node("../ModuleDescription").text=""
-	get_parent().get_parent().get_node("BackGroundManager/BackGroundNow").texture=get_parent().get_parent().get_node("BackGroundManager").BackgroundNow
+	
 	get_tree().paused=false
 	WorldVar.Is_In_Creating_Mode=false
+	
+	var ModulesManager
+	ModulesManager=get_parent().get_parent().get_node("Core/ModuleManager")
 	ModulesManager.Calc_Value()
 	ModulesManager.PowerManage()
 	ModulesManager.Calc_Center_of_Mess()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://png/星图/star_map_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/BasicModule/Core.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://scenes/Ship.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scripts/InterfaceModule.gd" type="Script" id=18]
 [ext_resource path="res://png/ui/gui_4_1.png" type="Texture" id=19]
+[ext_resource path="res://scripts/WeaponGroup.gd" type="Script" id=20]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 151.0
@@ -46,6 +47,7 @@ margin_right = 201.0
 margin_bottom = -122.0
 
 [node name="HPInterface" type="Node2D" parent="CanvasLayer/PlayerInterface"]
+pause_mode = 2
 
 [node name="Background" type="Sprite" parent="CanvasLayer/PlayerInterface/HPInterface"]
 scale = Vector2( 5, 5 )
@@ -54,14 +56,40 @@ texture = ExtResource( 19 )
 [node name="InterfaceModules" type="Node2D" parent="CanvasLayer/PlayerInterface/HPInterface"]
 script = ExtResource( 18 )
 
+[node name="WeaponGroupInterface" type="Node2D" parent="CanvasLayer/PlayerInterface"]
+
 [node name="Core" parent="." instance=ExtResource( 2 )]
 collision_mask = 3
 
 [node name="ModuleManager" parent="Core" index="3"]
 pause_mode = 1
 
+[node name="Engine" parent="Core/ModuleManager" index="0"]
+NAME = "核心引擎(向上)"
+
+[node name="Engine2" parent="Core/ModuleManager" index="1"]
+NAME = "核心引擎(向左)"
+
+[node name="Engine3" parent="Core/ModuleManager" index="2"]
+NAME = "核心引擎(向右)"
+
+[node name="Engine4" parent="Core/ModuleManager" index="3"]
+NAME = "核心引擎(向下)"
+
+[node name="Rotor" parent="Core/ModuleManager" index="4"]
+NAME = "核心转子"
+
+[node name="RotationTurret" parent="Core/ModuleManager" index="5"]
+NAME = "核心炮塔"
+
+[node name="Generator" parent="Core/ModuleManager" index="6"]
+NAME = "核心发电机"
+
 [node name="MousePoint" parent="Core/ModuleManager" index="7"]
 pause_mode = 2
+
+[node name="Store" parent="Core/ModuleManager" index="8"]
+NAME = "核心储藏箱"
 
 [node name="Camera2D" type="Camera2D" parent="Core"]
 pause_mode = 2
@@ -191,12 +219,90 @@ anchor_right = 1.0
 margin_left = -129.0
 margin_bottom = 18.0
 
+[node name="WeaponGroup" type="Control" parent="GUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="WeaponGroup" type="WindowDialog" parent="GUI/WeaponGroup"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -48.0
+margin_right = 385.0
+margin_bottom = 299.0
+window_title = "WeaponGroup"
+script = ExtResource( 20 )
+
+[node name="ItemList" type="ItemList" parent="GUI/WeaponGroup/WeaponGroup"]
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = 148.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/WeaponGroup/WeaponGroup"]
+anchor_right = 1.0
+margin_left = 148.0
+margin_top = 2.0
+margin_bottom = 25.0
+custom_constants/separation = 0
+alignment = 2
+
+[node name="Button" type="Button" parent="GUI/WeaponGroup/WeaponGroup/HBoxContainer"]
+margin_right = 68.0
+margin_bottom = 23.0
+text = "武器组1"
+
+[node name="Button2" type="Button" parent="GUI/WeaponGroup/WeaponGroup/HBoxContainer"]
+margin_left = 68.0
+margin_right = 136.0
+margin_bottom = 23.0
+text = "武器组2"
+
+[node name="Button3" type="Button" parent="GUI/WeaponGroup/WeaponGroup/HBoxContainer"]
+margin_left = 136.0
+margin_right = 204.0
+margin_bottom = 23.0
+text = "武器组3"
+
+[node name="Button4" type="Button" parent="GUI/WeaponGroup/WeaponGroup/HBoxContainer"]
+margin_left = 204.0
+margin_right = 272.0
+margin_bottom = 23.0
+text = "武器组4"
+
+[node name="Button5" type="Button" parent="GUI/WeaponGroup/WeaponGroup/HBoxContainer"]
+margin_left = 272.0
+margin_right = 340.0
+margin_bottom = 23.0
+text = "武器组5"
+
+[node name="Button6" type="Button" parent="GUI/WeaponGroup/WeaponGroup/HBoxContainer"]
+margin_left = 340.0
+margin_right = 432.0
+margin_bottom = 23.0
+text = "自动武器组"
+
+[node name="InfoList" type="ItemList" parent="GUI/WeaponGroup/WeaponGroup"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -432.0
+margin_top = 26.0
+
 [node name="BackGroundManager" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
 [node name="BackGroundNow" type="Sprite" parent="BackGroundManager"]
 pause_mode = 2
-position = Vector2( 16, -9 )
+position = Vector2( 16, 5 )
 z_index = -10
 texture = ExtResource( 6 )
 
@@ -206,6 +312,14 @@ texture = ExtResource( 6 )
 [connection signal="button_up" from="EscMenu/Control/load" to="EscMenu" method="_on_load_button_up"]
 [connection signal="popup_hide" from="GUI/Galaxy/Map" to="GUI" method="_on_Map_popup_hide"]
 [connection signal="popup_hide" from="GUI/Bag/Bag" to="GUI" method="_on_Bag_popup_hide"]
+[connection signal="popup_hide" from="GUI/WeaponGroup/WeaponGroup" to="GUI" method="_on_WeaponGroup_popup_hide"]
+[connection signal="item_selected" from="GUI/WeaponGroup/WeaponGroup/ItemList" to="GUI/WeaponGroup/WeaponGroup" method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="GUI/WeaponGroup/WeaponGroup/HBoxContainer/Button" to="GUI/WeaponGroup/WeaponGroup" method="_on_Button_pressed"]
+[connection signal="pressed" from="GUI/WeaponGroup/WeaponGroup/HBoxContainer/Button2" to="GUI/WeaponGroup/WeaponGroup" method="_on_Button2_pressed"]
+[connection signal="pressed" from="GUI/WeaponGroup/WeaponGroup/HBoxContainer/Button3" to="GUI/WeaponGroup/WeaponGroup" method="_on_Button3_pressed"]
+[connection signal="pressed" from="GUI/WeaponGroup/WeaponGroup/HBoxContainer/Button4" to="GUI/WeaponGroup/WeaponGroup" method="_on_Button4_pressed"]
+[connection signal="pressed" from="GUI/WeaponGroup/WeaponGroup/HBoxContainer/Button5" to="GUI/WeaponGroup/WeaponGroup" method="_on_Button5_pressed"]
+[connection signal="pressed" from="GUI/WeaponGroup/WeaponGroup/HBoxContainer/Button6" to="GUI/WeaponGroup/WeaponGroup" method="_on_Button6_pressed"]
 
 [editable path="CanvasLayer"]
 [editable path="Core"]

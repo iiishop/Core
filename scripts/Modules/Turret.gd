@@ -10,6 +10,7 @@ var Is_Ready=false
 
 func _ready():
 	add_to_group("Turret")
+	add_to_group("Weapon1")
 	
 func _physics_process(delta):
 	if CDNow>0:

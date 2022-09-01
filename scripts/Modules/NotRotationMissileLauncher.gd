@@ -10,6 +10,8 @@ var Is_Ready=true
 
 func _ready():
 	add_to_group("ImmobileMissileLauncher")
+	add_to_group("Weapon1")
+	
 	get_node("MissilePlatform/MissileLoad").texture=Missile.instance().get_node("Sprite").texture
 	ML=get_node("MissilePlatform/MissileLoad")
 	ML.position=get_node("MissilePlatform/MissilePosition").position

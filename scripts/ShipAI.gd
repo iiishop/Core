@@ -3,16 +3,16 @@ extends RigidBody2D
 var rd=RandomNumberGenerator.new()
 var Is_Ship=true
 var target=null						#敌对目标
-var Collision=[]					#可能的障碍物
+var Collision=[]						#可能的障碍物
 export var Camp=-1					#飞船所属的阵营 -1为无
 var GalaxyNow=0						#飞船当前所载的星系的ID，和玩家相同时飞船可见
 										#当飞船无阵营时，飞船不会进行跃迁操作，好感度列表为当前所处阵营的
 
 export var MaxRotSpeed=0.0			#船只最大旋转速度
-export var Force=0.0				#供给船只加速的力
+export var Force=0.0					#供给船只加速的力
 export var Moment=0.0				#供给船只旋转的力矩
 export var Distance=0.0				#船只距离目标船只的极限距离
-export var MaxSpeed=50.0			#船只巡航时的最大速度
+export var MaxSpeed=50.0				#船只巡航时的最大速度
 
 var direct:Vector2
 var AvoidForce:Vector2
@@ -30,9 +30,9 @@ func _ready():
 
 func _physics_process(delta):
 	MicroAdjust()
-#	if target!=null:			#test
-#		Attack()
-	Idle()
+	if target!=null:			#test
+		Attack()
+	#Idle()
 
 
 enum Behavior{
