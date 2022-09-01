@@ -6,6 +6,8 @@ var Is_Ship=true
 var HP=100
 var MaxHP=100
 
+var WeaponGroupNow=1
+
 var IsBraking=false
 var IsRotateU=false
 var IsRotateD=false
@@ -77,7 +79,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Shoot1") and !WorldVar.Is_In_Creating_Mode:
 		for i in get_node("ModuleManager").get_children():
 			if (i.is_in_group("RotationTurret") or i.is_in_group("Turret") or i.is_in_group("MissileLauncher") or i.is_in_group("ImmobileMissileLauncher")) and i.Is_Working:
-				if i.CDNow<=0 and i.Is_Ready:
+				if i.CDNow<=0 and i.Is_Ready and i.is_in_group("Weapon"+str(WeaponGroupNow)):
 					i.CDNow=i.CD/get_node("ModuleManager").PowerPercent
 					i.Shoot()
 
@@ -166,6 +168,21 @@ func _physics_process(delta):
 		CloseParticles("Down")
 
 	#get_node("CoreManager").Create()
+	
+	if Input.is_action_just_pressed("Change_Weapon_Group") and !WorldVar.Is_In_Creating_Mode:
+		WeaponGroupNow=WeaponGroupNow%5+1
+		get_parent().get_node("CanvasLayer/PlayerInterface/WeaponGroupInterface/Label").percent_visible=1
+		get_parent().get_node("CanvasLayer/PlayerInterface/WeaponGroupInterface/Label").text="当前正在使用:武器组"+str(WeaponGroupNow)
+		var n=WeaponGroupNow
+		
+		yield(get_tree().create_timer(0.5),"timeout")
+		for i in range(10):
+			if n == WeaponGroupNow:
+				yield(get_tree().create_timer(0.08),"timeout")
+				get_parent().get_node("CanvasLayer/PlayerInterface/WeaponGroupInterface/Label").percent_visible-=0.09999999
+			else:
+				get_parent().get_node("CanvasLayer/PlayerInterface/WeaponGroupInterface/Label").percent_visible=1
+				break
 
 
 

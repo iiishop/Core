@@ -62,6 +62,8 @@ func _on_Button_button_up():				#离开空间站
 	
 	get_node("../PlayerInterface/HPInterface/InterfaceModules").RefreshModules()
 	get_parent().get_parent().get_node("GUI/WeaponGroup/WeaponGroup").RefreshWeaponModules()
+	get_parent().get_parent().get_node("GUI/WeaponGroup/WeaponGroup/WeaponGroupInterface").RefreshModules()
+	get_parent().get_parent().get_node("GUI/WeaponGroup/WeaponGroup/WeaponGroupInterface").RefreshGroup()
 	get_parent().get_parent().get_node("BackGroundManager/BackGroundNow").texture=get_parent().get_parent().get_node("BackGroundManager").BackgroundNow
 	
 	get_node("../PlayerInterface").visible=true

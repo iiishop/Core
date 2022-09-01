@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://png/星图/star_map_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/BasicModule/Core.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://scripts/InterfaceModule.gd" type="Script" id=18]
 [ext_resource path="res://png/ui/gui_4_1.png" type="Texture" id=19]
 [ext_resource path="res://scripts/WeaponGroup.gd" type="Script" id=20]
+[ext_resource path="res://scripts/WeaponGroupInterface.gd" type="Script" id=21]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 151.0
@@ -39,15 +40,18 @@ visible = false
 visible = false
 
 [node name="PlayerInterface" type="Control" parent="CanvasLayer"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 161.0
-margin_top = -162.0
-margin_right = 201.0
-margin_bottom = -122.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
 
 [node name="HPInterface" type="Node2D" parent="CanvasLayer/PlayerInterface"]
 pause_mode = 2
+position = Vector2( -332, 160 )
 
 [node name="Background" type="Sprite" parent="CanvasLayer/PlayerInterface/HPInterface"]
 scale = Vector2( 5, 5 )
@@ -57,6 +61,13 @@ texture = ExtResource( 19 )
 script = ExtResource( 18 )
 
 [node name="WeaponGroupInterface" type="Node2D" parent="CanvasLayer/PlayerInterface"]
+position = Vector2( -172, 5 )
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerInterface/WeaponGroupInterface"]
+margin_right = 40.0
+margin_bottom = 17.0
+text = "当前正在使用:武器组1"
+percent_visible = 0.0
 
 [node name="Core" parent="." instance=ExtResource( 2 )]
 collision_mask = 3
@@ -290,12 +301,9 @@ margin_right = 432.0
 margin_bottom = 23.0
 text = "自动武器组"
 
-[node name="InfoList" type="ItemList" parent="GUI/WeaponGroup/WeaponGroup"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -432.0
-margin_top = 26.0
+[node name="WeaponGroupInterface" type="Node2D" parent="GUI/WeaponGroup/WeaponGroup"]
+position = Vector2( 360, 178 )
+script = ExtResource( 21 )
 
 [node name="BackGroundManager" type="Node2D" parent="."]
 script = ExtResource( 7 )

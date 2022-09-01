@@ -60,6 +60,7 @@ func _on_Button_pressed():
 			i.add_to_group("Weapon1")
 		
 		RefreshWeaponModules()
+		get_node("WeaponGroupInterface").RefreshGroup()
 
 
 func _on_Button2_pressed():
@@ -86,6 +87,7 @@ func _on_Button2_pressed():
 			i.add_to_group("Weapon2")
 		
 		RefreshWeaponModules()
+		get_node("WeaponGroupInterface").RefreshGroup()
 
 
 func _on_Button3_pressed():
@@ -112,6 +114,7 @@ func _on_Button3_pressed():
 			i.add_to_group("Weapon3")
 		
 		RefreshWeaponModules()
+		get_node("WeaponGroupInterface").RefreshGroup()
 
 
 func _on_Button4_pressed():
@@ -138,6 +141,7 @@ func _on_Button4_pressed():
 			i.add_to_group("Weapon4")
 		
 		RefreshWeaponModules()
+		get_node("WeaponGroupInterface").RefreshGroup()
 
 
 func _on_Button5_pressed():
@@ -164,6 +168,7 @@ func _on_Button5_pressed():
 			i.add_to_group("Weapon5")
 		
 		RefreshWeaponModules()
+		get_node("WeaponGroupInterface").RefreshGroup()
 
 
 func _on_Button6_pressed():
@@ -190,6 +195,7 @@ func _on_Button6_pressed():
 			pass
 		
 		RefreshWeaponModules()
+		get_node("WeaponGroupInterface").RefreshGroup()
 
 
 func _on_ItemList_item_selected(index):

@@ -30,9 +30,9 @@ func _ready():
 
 func _physics_process(delta):
 	MicroAdjust()
-	if target!=null:			#test
-		Attack()
-	#Idle()
+#	if target!=null:			#test
+#		Attack()
+	Idle()
 
 
 enum Behavior{
