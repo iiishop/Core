@@ -6,8 +6,10 @@ var Modules=[]
 
 func _ready():
 	RefreshModules()
-	RefreshGroup()
 
+
+func _physics_process(delta):
+	RefreshGroup()
 
 func RefreshModules():						#飞船模块变动时调用
 	for i in get_children():

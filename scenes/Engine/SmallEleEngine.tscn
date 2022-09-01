@@ -5,12 +5,16 @@
 
 [node name="Engine" instance=ExtResource( 1 )]
 ID = 4
+NAME = "小型电力引擎"
 MaxHP = 500
 Mass = 20
 Max_Power = 10
 Can_Build_Up = true
 Thrust = 80000
 Working_Power_Consumption = 30
+
+[node name="Particles2D" parent="." index="0"]
+rotation = 1.5708
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 rotation = 3.14159
