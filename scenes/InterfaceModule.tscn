@@ -10,4 +10,5 @@ texture = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="WeaponGroup" type="Sprite" parent="."]
-scale = Vector2( 3, 3 )
+modulate = Color( 0.866667, 0.423529, 0.423529, 1 )
+scale = Vector2( 2.2, 2.2 )
