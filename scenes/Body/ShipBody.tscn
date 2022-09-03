@@ -5,7 +5,7 @@
 
 [node name="Body" instance=ExtResource( 1 )]
 ID = 2
-MaxHP = 500
+MaxHP = 100
 Mass = 100
 Can_Build_Up = true
 Can_Build_Down = true

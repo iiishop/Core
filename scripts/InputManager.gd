@@ -235,7 +235,6 @@ func MoveRight():
 
 
 
-
 func _on_Button_button_up():
 	mass=get_node("ModuleManager").Total_Mass
 	position=get_node("ModuleManager").Center_Mass

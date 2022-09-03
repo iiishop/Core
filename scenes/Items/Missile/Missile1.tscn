@@ -25,6 +25,7 @@ ID = 5
 Force = 500.0
 RotSpeed = 1.0
 CD = 10.0
+Hurt = 10.0
 Explode = ExtResource( 3 )
 
 [node name="TheMissile" parent="." index="0"]
@@ -52,6 +53,7 @@ rotation = 1.5708
 shape = SubResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Missile_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_Missile_body_shape_entered"]
 [connection signal="body_entered" from="EnemyCheck" to="." method="_on_EnemyCheck_body_entered"]
 [connection signal="body_exited" from="EnemyCheck" to="." method="_on_EnemyCheck_body_exited"]
 

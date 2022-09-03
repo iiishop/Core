@@ -8,6 +8,10 @@ export var Camp=-1					#飞船所属的阵营 -1为无
 var GalaxyNow=0						#飞船当前所载的星系的ID，和玩家相同时飞船可见
 										#当飞船无阵营时，飞船不会进行跃迁操作，好感度列表为当前所处阵营的
 
+export(PackedScene) var Explode
+export var MaxHP=0.0
+var HP
+
 export var MaxRotSpeed=0.0			#船只最大旋转速度
 export var Force=0.0					#供给船只加速的力
 export var Moment=0.0				#供给船只旋转的力矩
@@ -23,6 +27,7 @@ var Angle:float
 var Is_MaxSpeed=false				#这一次加速是否达到了最大速度
 
 func _ready():
+	HP=MaxHP
 	for i in get_node("ModuleManager").get_children():
 		if i.is_in_group("ImmobileMissileLauncher") or i.is_in_group("Turret") or i.is_in_group("RotationTurret") or i.is_in_group("MissileLauncher"):
 			i.add_to_group("Auto")
@@ -30,16 +35,29 @@ func _ready():
 
 func _physics_process(delta):
 	MicroAdjust()
-#	if target!=null:			#test
-#		Attack()
-	Idle()
-
+	if target!=null:			#test
+		Attack()
+	#Idle()
+	if HP<=0:
+		Dead()
 
 enum Behavior{
 	Attack,
 	Idle,
 	Patral
 }
+
+
+
+func Dead():
+	#生成爆炸粒子
+	var e=Explode.instance()
+	e.global_position=global_position
+	get_node("/root/World/Particles").add_child(e)
+	#生成掉落物品
+	#生成其他信息（好感度等）
+	queue_free()
+
 
 
 func Attack():
@@ -118,6 +136,7 @@ func Shadow(Pos:Vector2):			#跟踪Pos，Pos必须为global_position
 	var angleT=(Vector2.RIGHT.rotated(rotation)).angle_to(Pos-global_position)
 	#linear_velocity=Vector2(linear_velocity.length(),0).rotated(rotation)
 	if angleT>0.1:
+		
 		if abs(angular_velocity)<=MaxRotSpeed:
 			applied_torque=Moment
 		else:
@@ -208,3 +227,5 @@ func _on_AttackArea_area_entered(area):
 
 func _on_AttackArea_area_exited(area):
 	Collision.erase(area)
+
+
