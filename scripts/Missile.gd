@@ -85,6 +85,10 @@ func _on_Missile_body_entered(body):
 
 func _on_Missile_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body.name=="Core":
-		for i in body.get_node("ModuleManager").get_children():
-			if i.name+"C"==body.shape_owner_get_owner(body_shape_index).name:
-				i.HP-=Hurt
+		if body.shape_owner_get_owner(body_shape_index).name=="CoreC":
+			body.HP-=Hurt
+		else:
+			for i in body.get_node("ModuleManager").get_children():
+				if i.name+"C"==body.shape_owner_get_owner(body_shape_index).name:
+					i.HP-=Hurt
+					

@@ -28,7 +28,12 @@ func _ready():
 
 
 func _physics_process(delta):
-
+	
+	
+	if HP<=0:
+		get_tree().paused=true
+	
+	
 	if (Input.is_action_just_pressed("Clockwise_Rotation") or Input.is_action_just_released("Anticlockwise_Rotation")) and !IsBraking and !WorldVar.Is_In_Creating_Mode:
 		add_torque(get_node("ModuleManager").Moment*get_node("ModuleManager").PowerPercent) 
 	if (Input.is_action_just_released("Clockwise_Rotation") or Input.is_action_just_pressed("Anticlockwise_Rotation")) and !IsBraking and !WorldVar.Is_In_Creating_Mode:

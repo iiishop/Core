@@ -2,14 +2,14 @@ extends "res://scripts/BasicModule.gd"
 
 
 #引擎模块的基础脚本
-export var Thrust=0						#引擎的推力大小
-var Is_Right=false						#引擎是否在核心右边
-var Is_Left=false						#引擎是否在核心左边
-var Is_Up=false							#引擎是否在核心上方
-var Is_Down=false						#引擎是否在核心下方
-export var Working_Power_Consumption=0	#引擎在工作中新增功率使用
+export var Thrust=0							#引擎的推力大小
+var Is_Right=false							#引擎是否在核心右边
+var Is_Left=false							#引擎是否在核心左边
+var Is_Up=false								#引擎是否在核心上方
+var Is_Down=false							#引擎是否在核心下方
+export var Working_Power_Consumption=0		#引擎在工作中新增功率使用
 export var Working_Hyd_Consumption=0		#引擎在工作中单位时间氢气消耗量
-var Face=0								#引擎推进方向0前 1后 2左 3右
+export var Face=0							#引擎推进方向0前 1后 2左 3右
 
 func _ready():
 	add_to_group("Engine")

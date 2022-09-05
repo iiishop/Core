@@ -123,7 +123,7 @@ Max_Weight = 1000.0
 [node name="CoreSprit" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CoreC" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [editable path="ModuleManager/Engine"]

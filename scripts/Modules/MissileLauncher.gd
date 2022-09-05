@@ -1,11 +1,11 @@
 extends "res://scripts/BasicModule.gd"
 
-export(PackedScene) var Missile
-export var CD=0.0
-export var Firing_Range=0.0
+export(PackedScene) var Missile			#使用的导弹
+export var CD=0.0						#武器CD
+export var Firing_Range=0.0				#自动开火触发射程
 var CDNow=0.0
-var ML
-var T
+var ML									#填装用导弹精灵
+var T									#每秒填装移动间隔
 var Is_Ready=true
 
 func _ready():
